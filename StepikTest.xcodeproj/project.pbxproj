@@ -1,0 +1,749 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6144CED41EB7A5DF00C0E105 /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6144CED31EB7A5DF00C0E105 /* CoursesViewController.swift */; };
+		6144CED91EB7B03100C0E105 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6144CED81EB7B03100C0E105 /* Course.swift */; };
+		6144CEDC1EB7B98D00C0E105 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6144CEDB1EB7B98D00C0E105 /* CourseCell.swift */; };
+		6144CEE11EB7D1E400C0E105 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6144CEE01EB7D1E400C0E105 /* ApiManager.swift */; };
+		615250CC1EC0DC080034F492 /* String+HtmlDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615250CB1EC0DC080034F492 /* String+HtmlDecoding.swift */; };
+		615250CE1EC10F120034F492 /* CourseInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 615250CD1EC10F120034F492 /* CourseInfoCell.xib */; };
+		615250D01EC10F930034F492 /* CourseInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615250CF1EC10F930034F492 /* CourseInfoCell.swift */; };
+		615250D21EC110BB0034F492 /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615250D11EC110BB0034F492 /* CourseViewController.swift */; };
+		615250D41EC11AB90034F492 /* CourseTableViewSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 615250D31EC11AB90034F492 /* CourseTableViewSectionHeader.xib */; };
+		615250D61EC11DAD0034F492 /* CourseTableViewSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615250D51EC11DAD0034F492 /* CourseTableViewSectionHeader.swift */; };
+		615250DA1EC124610034F492 /* CourseOverviewTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615250D91EC124610034F492 /* CourseOverviewTableViewDataSource.swift */; };
+		615250DC1EC124D40034F492 /* DefaultCourseInfoItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 615250DB1EC124D40034F492 /* DefaultCourseInfoItemCell.xib */; };
+		615250DE1EC1273D0034F492 /* DefaultCourseInfoItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615250DD1EC1273D0034F492 /* DefaultCourseInfoItemCell.swift */; };
+		6185EC911EC255D400197FB1 /* CourseOverviewTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6185EC901EC255D400197FB1 /* CourseOverviewTableViewDelegate.swift */; };
+		6185EC931EC26B7F00197FB1 /* InstructorsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6185EC921EC26B7F00197FB1 /* InstructorsCell.xib */; };
+		6185EC951EC26CDA00197FB1 /* InstructorsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6185EC941EC26CDA00197FB1 /* InstructorsCell.swift */; };
+		6185EC971EC271B500197FB1 /* InstructorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6185EC961EC271B500197FB1 /* InstructorCell.xib */; };
+		6185EC991EC271DE00197FB1 /* InstructorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6185EC981EC271DE00197FB1 /* InstructorCell.swift */; };
+		6185EC9B1EC284D500197FB1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6185EC9A1EC284D500197FB1 /* User.swift */; };
+		61C43A0D1EB7A1BB00DED919 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C43A0C1EB7A1BB00DED919 /* AppDelegate.swift */; };
+		61C43A121EB7A1BB00DED919 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61C43A101EB7A1BB00DED919 /* Main.storyboard */; };
+		61C43A141EB7A1BB00DED919 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61C43A131EB7A1BB00DED919 /* Assets.xcassets */; };
+		61C43A171EB7A1BB00DED919 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61C43A151EB7A1BB00DED919 /* LaunchScreen.storyboard */; };
+		61C43A221EB7A1BB00DED919 /* StepikTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C43A211EB7A1BB00DED919 /* StepikTestTests.swift */; };
+		61C43A2D1EB7A1BB00DED919 /* StepikTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C43A2C1EB7A1BB00DED919 /* StepikTestUITests.swift */; };
+		61DBB6111EBA8953006BCCE1 /* StatusBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DBB6101EBA8953006BCCE1 /* StatusBarManager.swift */; };
+		92582A5A87000CDA75302994 /* Pods_StepikTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA15E2B9139F60697CD39ED8 /* Pods_StepikTest.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		61C43A1E1EB7A1BB00DED919 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61C43A011EB7A1BB00DED919 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 61C43A081EB7A1BB00DED919;
+			remoteInfo = StepikTest;
+		};
+		61C43A291EB7A1BB00DED919 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61C43A011EB7A1BB00DED919 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 61C43A081EB7A1BB00DED919;
+			remoteInfo = StepikTest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3E3101698F26DF03BB399474 /* Pods-StepikTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StepikTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StepikTest/Pods-StepikTest.debug.xcconfig"; sourceTree = "<group>"; };
+		6144CED31EB7A5DF00C0E105 /* CoursesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
+		6144CED81EB7B03100C0E105 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		6144CEDB1EB7B98D00C0E105 /* CourseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
+		6144CEDD1EB7CECE00C0E105 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6144CEE01EB7D1E400C0E105 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		615250CB1EC0DC080034F492 /* String+HtmlDecoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+HtmlDecoding.swift"; sourceTree = "<group>"; };
+		615250CD1EC10F120034F492 /* CourseInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CourseInfoCell.xib; path = StepikTest/Courses/CourseInfoCell.xib; sourceTree = SOURCE_ROOT; };
+		615250CF1EC10F930034F492 /* CourseInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CourseInfoCell.swift; path = StepikTest/Courses/CourseInfoCell.swift; sourceTree = SOURCE_ROOT; };
+		615250D11EC110BB0034F492 /* CourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CourseViewController.swift; path = StepikTest/Courses/CourseViewController.swift; sourceTree = SOURCE_ROOT; };
+		615250D31EC11AB90034F492 /* CourseTableViewSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CourseTableViewSectionHeader.xib; path = StepikTest/Courses/CourseTableViewSectionHeader.xib; sourceTree = SOURCE_ROOT; };
+		615250D51EC11DAD0034F492 /* CourseTableViewSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CourseTableViewSectionHeader.swift; path = StepikTest/Courses/CourseTableViewSectionHeader.swift; sourceTree = SOURCE_ROOT; };
+		615250D91EC124610034F492 /* CourseOverviewTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CourseOverviewTableViewDataSource.swift; path = StepikTest/Courses/CourseOverviewTableViewDataSource.swift; sourceTree = SOURCE_ROOT; };
+		615250DB1EC124D40034F492 /* DefaultCourseInfoItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DefaultCourseInfoItemCell.xib; path = StepikTest/Courses/DefaultCourseInfoItemCell.xib; sourceTree = SOURCE_ROOT; };
+		615250DD1EC1273D0034F492 /* DefaultCourseInfoItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefaultCourseInfoItemCell.swift; path = StepikTest/Courses/DefaultCourseInfoItemCell.swift; sourceTree = SOURCE_ROOT; };
+		6185EC901EC255D400197FB1 /* CourseOverviewTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CourseOverviewTableViewDelegate.swift; path = ../CourseOverviewTableViewDelegate.swift; sourceTree = "<group>"; };
+		6185EC921EC26B7F00197FB1 /* InstructorsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InstructorsCell.xib; path = ../InstructorsCell.xib; sourceTree = "<group>"; };
+		6185EC941EC26CDA00197FB1 /* InstructorsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstructorsCell.swift; path = ../InstructorsCell.swift; sourceTree = "<group>"; };
+		6185EC961EC271B500197FB1 /* InstructorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InstructorCell.xib; path = ../InstructorCell.xib; sourceTree = "<group>"; };
+		6185EC981EC271DE00197FB1 /* InstructorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstructorCell.swift; path = ../InstructorCell.swift; sourceTree = "<group>"; };
+		6185EC9A1EC284D500197FB1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		61C43A091EB7A1BB00DED919 /* StepikTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StepikTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		61C43A0C1EB7A1BB00DED919 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		61C43A111EB7A1BB00DED919 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		61C43A131EB7A1BB00DED919 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		61C43A161EB7A1BB00DED919 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		61C43A181EB7A1BB00DED919 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61C43A1D1EB7A1BB00DED919 /* StepikTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StepikTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		61C43A211EB7A1BB00DED919 /* StepikTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepikTestTests.swift; sourceTree = "<group>"; };
+		61C43A231EB7A1BB00DED919 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61C43A281EB7A1BB00DED919 /* StepikTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StepikTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		61C43A2C1EB7A1BB00DED919 /* StepikTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepikTestUITests.swift; sourceTree = "<group>"; };
+		61C43A2E1EB7A1BB00DED919 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61DBB6101EBA8953006BCCE1 /* StatusBarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarManager.swift; sourceTree = "<group>"; };
+		941A1B308C5AEF352858A4C2 /* Pods-StepikTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StepikTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-StepikTest/Pods-StepikTest.release.xcconfig"; sourceTree = "<group>"; };
+		FA15E2B9139F60697CD39ED8 /* Pods_StepikTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StepikTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		61C43A061EB7A1BB00DED919 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92582A5A87000CDA75302994 /* Pods_StepikTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61C43A1A1EB7A1BB00DED919 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61C43A251EB7A1BB00DED919 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6144CED51EB7AFBD00C0E105 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6144CED81EB7B03100C0E105 /* Course.swift */,
+				6185EC9A1EC284D500197FB1 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6144CED61EB7AFD700C0E105 /* Courses */ = {
+			isa = PBXGroup;
+			children = (
+				6144CED31EB7A5DF00C0E105 /* CoursesViewController.swift */,
+				6144CEDB1EB7B98D00C0E105 /* CourseCell.swift */,
+			);
+			path = Courses;
+			sourceTree = "<group>";
+		};
+		6144CED71EB7AFDF00C0E105 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				61C43A101EB7A1BB00DED919 /* Main.storyboard */,
+				61C43A151EB7A1BB00DED919 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		6144CEDF1EB7D1CB00C0E105 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				6144CEE01EB7D1E400C0E105 /* ApiManager.swift */,
+				61DBB6101EBA8953006BCCE1 /* StatusBarManager.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		615250CA1EC0DBD40034F492 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				615250CB1EC0DC080034F492 /* String+HtmlDecoding.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6185EC8F1EC24BBB00197FB1 /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				615250D11EC110BB0034F492 /* CourseViewController.swift */,
+				615250CF1EC10F930034F492 /* CourseInfoCell.swift */,
+				615250CD1EC10F120034F492 /* CourseInfoCell.xib */,
+				615250DD1EC1273D0034F492 /* DefaultCourseInfoItemCell.swift */,
+				615250DB1EC124D40034F492 /* DefaultCourseInfoItemCell.xib */,
+				615250D51EC11DAD0034F492 /* CourseTableViewSectionHeader.swift */,
+				615250D31EC11AB90034F492 /* CourseTableViewSectionHeader.xib */,
+				6185EC9C1EC286DA00197FB1 /* Overview */,
+			);
+			path = Course;
+			sourceTree = "<group>";
+		};
+		6185EC9C1EC286DA00197FB1 /* Overview */ = {
+			isa = PBXGroup;
+			children = (
+				615250D91EC124610034F492 /* CourseOverviewTableViewDataSource.swift */,
+				6185EC901EC255D400197FB1 /* CourseOverviewTableViewDelegate.swift */,
+				6185EC941EC26CDA00197FB1 /* InstructorsCell.swift */,
+				6185EC921EC26B7F00197FB1 /* InstructorsCell.xib */,
+				6185EC981EC271DE00197FB1 /* InstructorCell.swift */,
+				6185EC961EC271B500197FB1 /* InstructorCell.xib */,
+			);
+			path = Overview;
+			sourceTree = "<group>";
+		};
+		61C43A001EB7A1BB00DED919 = {
+			isa = PBXGroup;
+			children = (
+				61C43A0B1EB7A1BB00DED919 /* StepikTest */,
+				61C43A201EB7A1BB00DED919 /* StepikTestTests */,
+				61C43A2B1EB7A1BB00DED919 /* StepikTestUITests */,
+				61C43A0A1EB7A1BB00DED919 /* Products */,
+				934145D6793042E62C028AD9 /* Pods */,
+				77223C7601B2D1A5994FAFDE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		61C43A0A1EB7A1BB00DED919 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				61C43A091EB7A1BB00DED919 /* StepikTest.app */,
+				61C43A1D1EB7A1BB00DED919 /* StepikTestTests.xctest */,
+				61C43A281EB7A1BB00DED919 /* StepikTestUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		61C43A0B1EB7A1BB00DED919 /* StepikTest */ = {
+			isa = PBXGroup;
+			children = (
+				6144CEDF1EB7D1CB00C0E105 /* Helpers */,
+				6144CED61EB7AFD700C0E105 /* Courses */,
+				6185EC8F1EC24BBB00197FB1 /* Course */,
+				6144CED51EB7AFBD00C0E105 /* Model */,
+				6144CED71EB7AFDF00C0E105 /* Storyboards */,
+				615250CA1EC0DBD40034F492 /* Extensions */,
+				61C43A0C1EB7A1BB00DED919 /* AppDelegate.swift */,
+				61C43A131EB7A1BB00DED919 /* Assets.xcassets */,
+				61C43A181EB7A1BB00DED919 /* Info.plist */,
+			);
+			path = StepikTest;
+			sourceTree = "<group>";
+		};
+		61C43A201EB7A1BB00DED919 /* StepikTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				61C43A211EB7A1BB00DED919 /* StepikTestTests.swift */,
+				61C43A231EB7A1BB00DED919 /* Info.plist */,
+			);
+			path = StepikTestTests;
+			sourceTree = "<group>";
+		};
+		61C43A2B1EB7A1BB00DED919 /* StepikTestUITests */ = {
+			isa = PBXGroup;
+			children = (
+				61C43A2C1EB7A1BB00DED919 /* StepikTestUITests.swift */,
+				61C43A2E1EB7A1BB00DED919 /* Info.plist */,
+			);
+			path = StepikTestUITests;
+			sourceTree = "<group>";
+		};
+		77223C7601B2D1A5994FAFDE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6144CEDD1EB7CECE00C0E105 /* UIKit.framework */,
+				FA15E2B9139F60697CD39ED8 /* Pods_StepikTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		934145D6793042E62C028AD9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3E3101698F26DF03BB399474 /* Pods-StepikTest.debug.xcconfig */,
+				941A1B308C5AEF352858A4C2 /* Pods-StepikTest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		61C43A081EB7A1BB00DED919 /* StepikTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 61C43A311EB7A1BB00DED919 /* Build configuration list for PBXNativeTarget "StepikTest" */;
+			buildPhases = (
+				2C250107584E772DF77584D7 /* [CP] Check Pods Manifest.lock */,
+				61C43A051EB7A1BB00DED919 /* Sources */,
+				61C43A061EB7A1BB00DED919 /* Frameworks */,
+				61C43A071EB7A1BB00DED919 /* Resources */,
+				3418244B31292EBD9ADF6333 /* [CP] Embed Pods Frameworks */,
+				E1A613E053C976C01D077BCC /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StepikTest;
+			productName = StepikTest;
+			productReference = 61C43A091EB7A1BB00DED919 /* StepikTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		61C43A1C1EB7A1BB00DED919 /* StepikTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 61C43A341EB7A1BB00DED919 /* Build configuration list for PBXNativeTarget "StepikTestTests" */;
+			buildPhases = (
+				61C43A191EB7A1BB00DED919 /* Sources */,
+				61C43A1A1EB7A1BB00DED919 /* Frameworks */,
+				61C43A1B1EB7A1BB00DED919 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				61C43A1F1EB7A1BB00DED919 /* PBXTargetDependency */,
+			);
+			name = StepikTestTests;
+			productName = StepikTestTests;
+			productReference = 61C43A1D1EB7A1BB00DED919 /* StepikTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		61C43A271EB7A1BB00DED919 /* StepikTestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 61C43A371EB7A1BB00DED919 /* Build configuration list for PBXNativeTarget "StepikTestUITests" */;
+			buildPhases = (
+				61C43A241EB7A1BB00DED919 /* Sources */,
+				61C43A251EB7A1BB00DED919 /* Frameworks */,
+				61C43A261EB7A1BB00DED919 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				61C43A2A1EB7A1BB00DED919 /* PBXTargetDependency */,
+			);
+			name = StepikTestUITests;
+			productName = StepikTestUITests;
+			productReference = 61C43A281EB7A1BB00DED919 /* StepikTestUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		61C43A011EB7A1BB00DED919 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Natalia Nikitina";
+				TargetAttributes = {
+					61C43A081EB7A1BB00DED919 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 5H72FC97K4;
+						ProvisioningStyle = Automatic;
+					};
+					61C43A1C1EB7A1BB00DED919 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 61C43A081EB7A1BB00DED919;
+					};
+					61C43A271EB7A1BB00DED919 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 61C43A081EB7A1BB00DED919;
+					};
+				};
+			};
+			buildConfigurationList = 61C43A041EB7A1BB00DED919 /* Build configuration list for PBXProject "StepikTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 61C43A001EB7A1BB00DED919;
+			productRefGroup = 61C43A0A1EB7A1BB00DED919 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				61C43A081EB7A1BB00DED919 /* StepikTest */,
+				61C43A1C1EB7A1BB00DED919 /* StepikTestTests */,
+				61C43A271EB7A1BB00DED919 /* StepikTestUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		61C43A071EB7A1BB00DED919 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6185EC971EC271B500197FB1 /* InstructorCell.xib in Resources */,
+				615250DC1EC124D40034F492 /* DefaultCourseInfoItemCell.xib in Resources */,
+				615250CE1EC10F120034F492 /* CourseInfoCell.xib in Resources */,
+				6185EC931EC26B7F00197FB1 /* InstructorsCell.xib in Resources */,
+				61C43A171EB7A1BB00DED919 /* LaunchScreen.storyboard in Resources */,
+				615250D41EC11AB90034F492 /* CourseTableViewSectionHeader.xib in Resources */,
+				61C43A141EB7A1BB00DED919 /* Assets.xcassets in Resources */,
+				61C43A121EB7A1BB00DED919 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61C43A1B1EB7A1BB00DED919 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61C43A261EB7A1BB00DED919 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2C250107584E772DF77584D7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3418244B31292EBD9ADF6333 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StepikTest/Pods-StepikTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1A613E053C976C01D077BCC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StepikTest/Pods-StepikTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		61C43A051EB7A1BB00DED919 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				615250CC1EC0DC080034F492 /* String+HtmlDecoding.swift in Sources */,
+				6144CEDC1EB7B98D00C0E105 /* CourseCell.swift in Sources */,
+				615250D21EC110BB0034F492 /* CourseViewController.swift in Sources */,
+				615250DE1EC1273D0034F492 /* DefaultCourseInfoItemCell.swift in Sources */,
+				6185EC9B1EC284D500197FB1 /* User.swift in Sources */,
+				6144CED91EB7B03100C0E105 /* Course.swift in Sources */,
+				6185EC911EC255D400197FB1 /* CourseOverviewTableViewDelegate.swift in Sources */,
+				6144CEE11EB7D1E400C0E105 /* ApiManager.swift in Sources */,
+				615250D61EC11DAD0034F492 /* CourseTableViewSectionHeader.swift in Sources */,
+				615250D01EC10F930034F492 /* CourseInfoCell.swift in Sources */,
+				615250DA1EC124610034F492 /* CourseOverviewTableViewDataSource.swift in Sources */,
+				61DBB6111EBA8953006BCCE1 /* StatusBarManager.swift in Sources */,
+				6185EC991EC271DE00197FB1 /* InstructorCell.swift in Sources */,
+				61C43A0D1EB7A1BB00DED919 /* AppDelegate.swift in Sources */,
+				6185EC951EC26CDA00197FB1 /* InstructorsCell.swift in Sources */,
+				6144CED41EB7A5DF00C0E105 /* CoursesViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61C43A191EB7A1BB00DED919 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61C43A221EB7A1BB00DED919 /* StepikTestTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61C43A241EB7A1BB00DED919 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61C43A2D1EB7A1BB00DED919 /* StepikTestUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		61C43A1F1EB7A1BB00DED919 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 61C43A081EB7A1BB00DED919 /* StepikTest */;
+			targetProxy = 61C43A1E1EB7A1BB00DED919 /* PBXContainerItemProxy */;
+		};
+		61C43A2A1EB7A1BB00DED919 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 61C43A081EB7A1BB00DED919 /* StepikTest */;
+			targetProxy = 61C43A291EB7A1BB00DED919 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		61C43A101EB7A1BB00DED919 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				61C43A111EB7A1BB00DED919 /* Base */,
+			);
+			name = Main.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		61C43A151EB7A1BB00DED919 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				61C43A161EB7A1BB00DED919 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		61C43A2F1EB7A1BB00DED919 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		61C43A301EB7A1BB00DED919 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		61C43A321EB7A1BB00DED919 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E3101698F26DF03BB399474 /* Pods-StepikTest.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5H72FC97K4;
+				INFOPLIST_FILE = StepikTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = agerstown.StepikTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		61C43A331EB7A1BB00DED919 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 941A1B308C5AEF352858A4C2 /* Pods-StepikTest.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5H72FC97K4;
+				INFOPLIST_FILE = StepikTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = agerstown.StepikTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		61C43A351EB7A1BB00DED919 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = StepikTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = agerstown.StepikTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StepikTest.app/StepikTest";
+			};
+			name = Debug;
+		};
+		61C43A361EB7A1BB00DED919 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = StepikTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = agerstown.StepikTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StepikTest.app/StepikTest";
+			};
+			name = Release;
+		};
+		61C43A381EB7A1BB00DED919 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = StepikTestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = agerstown.StepikTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = StepikTest;
+			};
+			name = Debug;
+		};
+		61C43A391EB7A1BB00DED919 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = StepikTestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = agerstown.StepikTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = StepikTest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		61C43A041EB7A1BB00DED919 /* Build configuration list for PBXProject "StepikTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61C43A2F1EB7A1BB00DED919 /* Debug */,
+				61C43A301EB7A1BB00DED919 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		61C43A311EB7A1BB00DED919 /* Build configuration list for PBXNativeTarget "StepikTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61C43A321EB7A1BB00DED919 /* Debug */,
+				61C43A331EB7A1BB00DED919 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		61C43A341EB7A1BB00DED919 /* Build configuration list for PBXNativeTarget "StepikTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61C43A351EB7A1BB00DED919 /* Debug */,
+				61C43A361EB7A1BB00DED919 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		61C43A371EB7A1BB00DED919 /* Build configuration list for PBXNativeTarget "StepikTestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61C43A381EB7A1BB00DED919 /* Debug */,
+				61C43A391EB7A1BB00DED919 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 61C43A011EB7A1BB00DED919 /* Project object */;
+}
