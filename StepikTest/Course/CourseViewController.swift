@@ -16,8 +16,16 @@ class CourseViewController: UIViewController {
     var course: Course?
     
     var overviewTableViewDataSource: CourseOverviewTableViewDataSource?
-    var overviewTableViewDelegate: CourseOverviewTableViewDelegate?
+    var detailedTableViewDataSource: CourseDetailedTableViewDataSource?
     
+    var tableViewHeader: CourseTableViewSectionHeader?
+    let headerHeight: CGFloat = 100
+    
+    var currentPage = 0
+    
+    var tabs: [UIButton]?
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,6 +41,7 @@ class CourseViewController: UIViewController {
     
 }
 
+// MARK: - UITableViewDataSource
 extension CourseViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,36 +50,97 @@ extension CourseViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewCourseInfo.dequeueReusableCell(withIdentifier: "CourseInfoCell") as! CourseInfoCell
-        cell.scrollView.bounds.size.height = cell.scrollView.bounds.height - 185 - 100 - 44 - 20
+        cell.scrollView.delegate = self
+        cell.scrollView.bounds.size.height -= videoView.bounds.size.height + headerHeight + self.navigationController!.navigationBar.bounds.height + UIApplication.shared.statusBarFrame.height
         cell.scrollView.contentSize = CGSize(width: self.view.bounds.width * 3, height: cell.scrollView.bounds.height)
         
         let overviewTableView = UITableView(frame: CGRect(x: cell.scrollView.bounds.origin.x, y: cell.scrollView.bounds.origin.y, width: cell.scrollView.bounds.width, height: cell.scrollView.bounds.height))
-        
-        overviewTableViewDataSource = CourseOverviewTableViewDataSource(course: course!)
-        overviewTableViewDelegate = CourseOverviewTableViewDelegate(course: course!)
-        
+        overviewTableViewDataSource = CourseOverviewTableViewDataSource(tableView: overviewTableView, course: course!)
         overviewTableView.dataSource = overviewTableViewDataSource
-        overviewTableView.delegate = overviewTableViewDelegate
+        overviewTableView.allowsSelection = false
+        // self-sized cells
+        overviewTableView.estimatedRowHeight = 100
+        overviewTableView.rowHeight = UITableViewAutomaticDimension
+        
+        let detailedTableView = UITableView(frame: CGRect(x: cell.scrollView.bounds.width, y: cell.scrollView.bounds.origin.y, width: cell.scrollView.bounds.width, height: cell.scrollView.bounds.height))
+        detailedTableViewDataSource = CourseDetailedTableViewDataSource(tableView: detailedTableView, course: course!)
+        detailedTableView.dataSource = detailedTableViewDataSource
+        detailedTableView.allowsSelection = false
+        detailedTableView.estimatedRowHeight = 100
+        detailedTableView.rowHeight = UITableViewAutomaticDimension
+        
+        
         
         cell.scrollView.addSubview(overviewTableView)
+        cell.scrollView.addSubview(detailedTableView)
         
         return cell
     }
 
 }
 
+// MARK: - UITableViewDelegate
 extension CourseViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.view.bounds.size.height - videoView.bounds.size.height - self.navigationController!.navigationBar.bounds.height - UIApplication.shared.statusBarFrame.height - 100
+        return self.view.bounds.size.height - videoView.bounds.size.height - headerHeight - self.navigationController!.navigationBar.bounds.height - UIApplication.shared.statusBarFrame.height
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableViewCourseInfo.dequeueReusableHeaderFooterView(withIdentifier: "CourseTableViewSectionHeader") as! CourseTableViewSectionHeader
         header.courseTitle.text = course?.title
+        header.buttonOverview.setTitleColor(UIColor.stepikBlueColor, for: .normal)
+        header.courseHeaderDelegate = self
+        tabs = [header.buttonOverview, header.buttonDetailed, header.buttonSyllabus]
+        tableViewHeader = header
         return header
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 100
+        return headerHeight
+    }
+}
+
+// MARK: - UIScrollViewDelegate
+extension CourseViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        if let header = tableViewHeader {
+            header.sectionIndicator.frame = CGRect(x: (header.bounds.origin.x + scrollView.contentOffset.x) / 3,
+                                                   y: header.bounds.size.height - header.sectionIndicator.bounds.size.height,
+                                                   width: header.sectionIndicator.bounds.size.width,
+                                                   height: header.sectionIndicator.bounds.size.height)
+        }
+        
+        let pageWidth = scrollView.bounds.width
+        let page = Int(scrollView.contentOffset.x / pageWidth + 1 / 2)
+        
+        if currentPage != page {
+            
+            if let header = tableViewHeader {
+                UIView.animate(withDuration: 0.3, animations: {
+                    header.sectionIndicator.frame = CGRect(x: CGFloat(page) * header.bounds.size.width / 3,
+                                                           y: header.bounds.size.height - header.sectionIndicator.bounds.size.height,
+                                                           width: header.sectionIndicator.bounds.size.width,
+                                                           height: header.sectionIndicator.bounds.size.height)
+                    
+                })
+                
+                tabs?[currentPage].setTitleColor(.darkGray, for: .normal)
+                tabs?[page].setTitleColor(UIColor.stepikBlueColor, for: .normal)
+            }
+            currentPage = page
+        }
+        
+    }
+
+}
+
+// MARK: - CourseHeaderDelegate
+extension CourseViewController: CourseHeaderDelegate {
+    func tabSelected(tab: Int) {
+        if let cell = tableViewCourseInfo.cellForRow(at: IndexPath(row: 0, section: 0)) as? CourseInfoCell {
+            cell.scrollView.setContentOffset(CGPoint(x: CGFloat(tab) * cell.bounds.size.width, y: 0), animated: true)
+        }
     }
 }

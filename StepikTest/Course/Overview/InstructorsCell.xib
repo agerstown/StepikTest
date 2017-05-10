@@ -40,6 +40,7 @@
                 <constraint firstItem="Sqc-rI-V5v" firstAttribute="top" secondItem="hxs-ab-aXd" secondAttribute="bottom" constant="8" id="2Cr-qA-3Yk"/>
                 <constraint firstItem="Sqc-rI-V5v" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="IED-wk-uwW"/>
                 <constraint firstItem="hxs-ab-aXd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="ZKH-tr-e4H"/>
+                <constraint firstAttribute="bottom" secondItem="Sqc-rI-V5v" secondAttribute="bottom" constant="15.5" id="bs0-pQ-NlN"/>
                 <constraint firstItem="hxs-ab-aXd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="gGo-2G-KYp"/>
                 <constraint firstAttribute="trailing" secondItem="Sqc-rI-V5v" secondAttribute="trailing" constant="16" id="gNZ-2y-d7f"/>
             </constraints>

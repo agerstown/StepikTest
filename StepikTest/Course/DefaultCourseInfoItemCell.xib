@@ -15,14 +15,17 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCf-YA-UsF">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCf-YA-UsF">
                     <rect key="frame" x="16" y="16" width="347" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="PYG-mD-qoo"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUV-lG-0pt">
-                    <rect key="frame" x="16" y="45" width="347" height="16"/>
+                    <rect key="frame" x="16" y="45" width="347" height="606"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -30,6 +33,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="sUV-lG-0pt" secondAttribute="bottom" constant="16" id="2FB-U4-K4j"/>
                 <constraint firstAttribute="trailing" secondItem="sUV-lG-0pt" secondAttribute="trailing" constant="12" id="5JH-Sv-ygh"/>
                 <constraint firstAttribute="trailing" secondItem="jCf-YA-UsF" secondAttribute="trailing" constant="12" id="G2N-wC-UHs"/>
                 <constraint firstItem="sUV-lG-0pt" firstAttribute="top" secondItem="jCf-YA-UsF" secondAttribute="bottom" constant="8" id="H8r-kv-35K"/>

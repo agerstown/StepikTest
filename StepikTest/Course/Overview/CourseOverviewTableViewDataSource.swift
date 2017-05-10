@@ -10,32 +10,51 @@ import UIKit
 
 class CourseOverviewTableViewDataSource: NSObject, UITableViewDataSource {
     
+    var tableView: UITableView
+    
     var course: Course
     
-    let summaryCell = Bundle.main.loadNibNamed("DefaultCourseInfoItemCell", owner: nil, options: nil)![0] as! DefaultCourseInfoItemCell
-    let instructorsCell = Bundle.main.loadNibNamed("InstructorsCell", owner: nil, options: nil)![0] as! InstructorsCell
+    let summaryCell = UINib(nibName: "DefaultCourseInfoItemCell", bundle: nil)
+    let instructorsCell = UINib(nibName: "InstructorsCell", bundle: nil)
     
-    init(course: Course) {
+    init(tableView: UITableView, course: Course) {
+        
+        self.tableView = tableView
         self.course = course
         
-        summaryCell.labelTitle.text = "Summary"
-        summaryCell.labelText.text = course.summary
-        
-        instructorsCell.collectionViewInstructors.register(InstructorCell.self, forCellWithReuseIdentifier: "InstructorCell")
+        tableView.register(summaryCell, forCellReuseIdentifier: "DefaultCourseInfoItemCell")
+        tableView.register(instructorsCell, forCellReuseIdentifier: "InstructorsCell")
         
         super.init()
-        
-        instructorsCell.collectionViewInstructors.dataSource = self
-//        instructorsCell.collectionViewInstructors.delegate = self
-        
-        setInstructorsCollectionViewInsets()
     }
     
-    func setInstructorsCollectionViewInsets() {
-        if let flowLayout = instructorsCell.collectionViewInstructors.collectionViewLayout as? UICollectionViewFlowLayout {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+        switch(indexPath.row) {
+        case 0:
+            let summaryCell = tableView.dequeueReusableCell(withIdentifier: "DefaultCourseInfoItemCell") as! DefaultCourseInfoItemCell
+            summaryCell.labelTitle.text = "Summary"
+            summaryCell.labelText.text = course.summary
+            return summaryCell
+        case 1:
+            let instructorsCell = tableView.dequeueReusableCell(withIdentifier: "InstructorsCell") as! InstructorsCell
+            instructorsCell.collectionViewInstructors.dataSource = self
+            setInstructorsCollectionViewInsets(cell: instructorsCell)
+            return instructorsCell
+        default:
+            return UITableViewCell()
+        }
+    }
+    
+    func setInstructorsCollectionViewInsets(cell: InstructorsCell) {
+        if let flowLayout = cell.collectionViewInstructors.collectionViewLayout as? UICollectionViewFlowLayout {
             
-            let numberOfCells = CGFloat(course.instructors.count)
-            let collectionViewWidth = instructorsCell.collectionViewInstructors.bounds.size.width
+            let numberOfCells = CGFloat(course.instructorsIDs.count)
+            let collectionViewWidth = cell.collectionViewInstructors.bounds.size.width
             let cellWidth = flowLayout.itemSize.width
             let spacing = flowLayout.minimumLineSpacing
             
@@ -48,28 +67,12 @@ class CourseOverviewTableViewDataSource: NSObject, UITableViewDataSource {
         }
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
-        switch(indexPath.row) {
-        case 0:
-            return summaryCell
-        case 1:
-            return instructorsCell
-        default:
-            return UITableViewCell()
-        }
-    }
-    
 }
 
 extension CourseOverviewTableViewDataSource: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return course.instructors.count
+        return course.instructorsIDs.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

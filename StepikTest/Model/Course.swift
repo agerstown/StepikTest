@@ -18,7 +18,14 @@ class Course {
     var endDate: Date?
     var coverUrl: String?
     
-    var instructors: [User] = []
+    var instructorsIDs: [String] = []
+    
+    var description: String?
+    var workload: String?
+    var certificate: String?
+    var audience: String?
+    var format: String?
+    var requirements: String?
     
     init(title: String, summary: String) {
         self.title = title

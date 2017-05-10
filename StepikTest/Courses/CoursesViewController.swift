@@ -173,6 +173,7 @@ extension CoursesViewController: UITableViewDataSource {
 extension CoursesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableViewCourses.deselectRow(at: indexPath, animated: true)
         selectedCourse = courses[indexPath.row]
         performSegue(withIdentifier: "segueToCourseInfo", sender: nil)
     }

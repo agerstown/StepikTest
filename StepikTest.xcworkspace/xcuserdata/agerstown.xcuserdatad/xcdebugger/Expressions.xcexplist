@@ -6,13 +6,29 @@
          contextName = "CourseViewController.tableView(UITableView, heightForRowAt : IndexPath) -&gt; CGFloat:CourseViewController.swift">
          <PersistentStrings>
             <PersistentString
+               value = "self.view.frame.size.height ">
+            </PersistentString>
+            <PersistentString
                value = "videoView.frame.size.height">
             </PersistentString>
             <PersistentString
                value = "self.navigationController!.navigationBar.frame.height">
             </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CoursesViewController.prepare(for : UIStoryboardSegue, sender : Any?) -&gt; ():CoursesViewController.swift">
+         <PersistentStrings>
             <PersistentString
-               value = "self.view.frame.size.height ">
+               value = "selectedCourse">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ApiManager.getCourseCover(coverUrl : String, cell : CourseCell) -&gt; ():ApiManager.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "URL(string: host + coverUrl)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -36,6 +52,33 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "CoursesViewController.scrollViewDidEndDecelerating(UIScrollView) -&gt; ():CoursesViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "scrollView.contentSize.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CourseViewController.scrollViewDidEndDragging(UIScrollView, willDecelerate : Bool) -&gt; ():CourseViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "currentPage">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CourseViewController.(scrollViewDidScroll(UIScrollView) -&gt; ()).(closure #1):CourseViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.currentPage * header.bounds.size.width / 3">
+            </PersistentString>
+            <PersistentString
+               value = "header.sectionIndicator.bounds.origin.x">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "CourseOverviewTableViewDataSource.tableView(UITableView, cellForRowAt : IndexPath) -&gt; UITableViewCell:CourseOverviewTableViewDataSource.swift">
          <PersistentStrings>
             <PersistentString
@@ -43,17 +86,6 @@
             </PersistentString>
             <PersistentString
                value = "tableView.dequeueReusableCell(withIdentifier: &quot;DefaultCourseInfoItemCell&quot;)">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "CoursesViewController.tableView(UITableView, cellForRowAt : IndexPath) -&gt; UITableViewCell:CoursesViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "course.beginDate">
-            </PersistentString>
-            <PersistentString
-               value = "course.title">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -69,18 +101,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ApiManager.getCourseCover(coverUrl : String, cell : CourseCell) -&gt; ():ApiManager.swift">
+         contextName = "CoursesViewController.tableView(UITableView, cellForRowAt : IndexPath) -&gt; UITableViewCell:CoursesViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "URL(string: host + coverUrl)">
+               value = "course.beginDate">
             </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "CoursesViewController.scrollViewDidEndDecelerating(UIScrollView) -&gt; ():CoursesViewController.swift">
-         <PersistentStrings>
             <PersistentString
-               value = "scrollView.contentSize.height">
+               value = "course.title">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -89,14 +116,6 @@
          <PersistentStrings>
             <PersistentString
                value = "label.bounds.height">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "CoursesViewController.prepare(for : UIStoryboardSegue, sender : Any?) -&gt; ():CoursesViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "selectedCourse">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

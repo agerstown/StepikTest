@@ -21,7 +21,12 @@
                         <constraint firstAttribute="width" constant="75" id="KmL-eV-8gQ"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="13"/>
-                    <state key="normal" title="OVERVIEW"/>
+                    <state key="normal" title="OVERVIEW">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonOverviewTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="7n8-rX-3Vg"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFo-B3-Qnq">
                     <rect key="frame" x="150" y="61" width="75" height="28"/>
@@ -29,7 +34,12 @@
                         <constraint firstAttribute="width" constant="75" id="Shp-eO-5ux"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="13"/>
-                    <state key="normal" title="DETAILED"/>
+                    <state key="normal" title="DETAILED">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonDetailedTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="x18-RR-oQJ"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWa-lz-3Oc">
                     <rect key="frame" x="275" y="61" width="75" height="28"/>
@@ -37,16 +47,13 @@
                         <constraint firstAttribute="width" constant="75" id="DlA-0x-oYp"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="13"/>
-                    <state key="normal" title="SYLLABUS"/>
+                    <state key="normal" title="SYLLABUS">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonSyllabusTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="pEd-xo-Vmi"/>
+                    </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vHf-eA-jEW">
-                    <rect key="frame" x="0.0" y="97" width="125" height="3"/>
-                    <color key="backgroundColor" red="0.15124568343162537" green="0.52322274446487427" blue="0.98500484228134155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="125" id="6GJ-qI-4By"/>
-                        <constraint firstAttribute="height" constant="3" id="tRE-wt-Qic"/>
-                    </constraints>
-                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlk-YP-GDd">
                     <rect key="frame" x="12" y="7" width="351" height="50"/>
                     <constraints>
@@ -56,17 +63,35 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PWW-4g-QvY">
+                    <rect key="frame" x="0.0" y="99" width="375" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="eHi-A4-ryr"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vHf-eA-jEW">
+                    <rect key="frame" x="0.0" y="97" width="125" height="3"/>
+                    <color key="backgroundColor" red="0.15124568343162537" green="0.52322274446487427" blue="0.98500484228134155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="125" id="6GJ-qI-4By"/>
+                        <constraint firstAttribute="height" constant="3" id="tRE-wt-Qic"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="PWW-4g-QvY" secondAttribute="bottom" id="4lf-t0-Nkk"/>
                 <constraint firstItem="qlk-YP-GDd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="12" id="BLe-am-wwi"/>
                 <constraint firstAttribute="trailing" secondItem="FWa-lz-3Oc" secondAttribute="trailing" constant="25" id="Ivr-7G-TPo"/>
                 <constraint firstItem="cFo-B3-Qnq" firstAttribute="top" secondItem="qlk-YP-GDd" secondAttribute="bottom" constant="4" id="J3w-e8-YMM"/>
+                <constraint firstAttribute="trailing" secondItem="PWW-4g-QvY" secondAttribute="trailing" id="KwQ-gl-h5j"/>
                 <constraint firstAttribute="trailing" secondItem="qlk-YP-GDd" secondAttribute="trailing" constant="12" id="MdX-PZ-4SD"/>
                 <constraint firstItem="FWa-lz-3Oc" firstAttribute="leading" secondItem="cFo-B3-Qnq" secondAttribute="trailing" constant="50" id="Zez-Sc-qll"/>
                 <constraint firstItem="vHf-eA-jEW" firstAttribute="top" secondItem="ndK-7o-hxW" secondAttribute="bottom" constant="8" id="flW-vo-TNo"/>
                 <constraint firstItem="vHf-eA-jEW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="jeW-Sz-PWI"/>
                 <constraint firstAttribute="bottom" secondItem="vHf-eA-jEW" secondAttribute="bottom" id="n4y-xr-Hni"/>
+                <constraint firstItem="PWW-4g-QvY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="tnb-uX-JaK"/>
                 <constraint firstItem="cFo-B3-Qnq" firstAttribute="leading" secondItem="ndK-7o-hxW" secondAttribute="trailing" constant="50" id="ufJ-4e-68G"/>
                 <constraint firstItem="ndK-7o-hxW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="25" id="vDn-Si-fTR"/>
                 <constraint firstItem="vHf-eA-jEW" firstAttribute="top" secondItem="FWa-lz-3Oc" secondAttribute="bottom" constant="8" id="yDx-An-nqQ"/>
@@ -74,7 +99,11 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="buttonDetailed" destination="cFo-B3-Qnq" id="udU-tM-A2h"/>
+                <outlet property="buttonOverview" destination="ndK-7o-hxW" id="zgr-Jp-ATh"/>
+                <outlet property="buttonSyllabus" destination="FWa-lz-3Oc" id="CcY-sm-x1V"/>
                 <outlet property="courseTitle" destination="qlk-YP-GDd" id="gqF-n7-kIA"/>
+                <outlet property="sectionIndicator" destination="vHf-eA-jEW" id="voV-v6-5Sa"/>
             </connections>
             <point key="canvasLocation" x="18.5" y="-729"/>
         </view>

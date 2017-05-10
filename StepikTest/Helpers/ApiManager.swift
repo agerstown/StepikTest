@@ -41,7 +41,7 @@ class ApiManager {
                     
                     for courseJSON in coursesJSON {
                         let courseJSON = courseJSON.1
-                        //print(courseJSON)
+                        
                         let title = courseJSON["title"].stringValue
                         let summary = courseJSON["summary"].stringValue.decodedFromHtml()
                         let course = Course(title: title, summary: summary)
@@ -52,14 +52,29 @@ class ApiManager {
                         if let endDate = courseJSON["last_deadline"].string {
                             course.endDate = dateFormatter.date(from: endDate)
                         }
-                        if let coverUrl = courseJSON["cover"].string {
-                            course.coverUrl = coverUrl
-                        }
+                        
+                        course.coverUrl = courseJSON["cover"].stringValue
                         
                         let instructorsIDs = courseJSON["instructors"]
-                        for id in instructorsIDs {
-                            self.getInstructor(course: course, id: id.1.stringValue)
-                        }
+                        course.instructorsIDs = instructorsIDs.map { $0.1.stringValue }
+                        
+                        let description = courseJSON["description"].stringValue.decodedFromHtml()
+                        course.description = self.valueOrNil(description)
+                        
+                        let workload = courseJSON["workload"].stringValue.decodedFromHtml()
+                        course.workload = self.valueOrNil(workload)
+                        
+                        let certificate = courseJSON["certificate"].stringValue.decodedFromHtml()
+                        course.certificate = self.valueOrNil(certificate)
+                        
+                        let audience = courseJSON["target_audience"].stringValue.decodedFromHtml()
+                        course.audience = self.valueOrNil(audience)
+                        
+                        let format = courseJSON["course_format"].stringValue.decodedFromHtml()
+                        course.format = self.valueOrNil(format)
+                        
+                        let requirements = courseJSON["requirements"].stringValue.decodedFromHtml()
+                        course.requirements = self.valueOrNil(requirements)
                         
                         courses.append(course)
                     }
@@ -69,6 +84,14 @@ class ApiManager {
                 StatusBarManager.shared.showCustomStatusBarError(text: "Error! Please check your Internet connection.")
                 completion(nil, nil)
             }
+        }
+    }
+    
+    func valueOrNil(_ string: String) -> String? {
+        if string.isEmpty {
+            return nil
+        } else {
+            return string
         }
     }
     
@@ -94,7 +117,7 @@ class ApiManager {
                         instructor.bio = bio
                     }
                     
-                    course.instructors.append(instructor)
+                    //course.instructors.append(instructor)
                 }
             }
         }
