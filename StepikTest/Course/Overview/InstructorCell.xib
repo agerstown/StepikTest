@@ -6,16 +6,56 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" restorationIdentifier="InstructorCell" id="iN0-l3-epB" customClass="InstructorCell" customModule="StepikTest" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+            <rect key="frame" x="0.0" y="0.0" width="100" height="132"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stepik_grey" translatesAutoresizingMaskIntoConstraints="NO" id="YzT-7B-llj">
+                    <rect key="frame" x="12" y="0.0" width="76" height="76"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="YzT-7B-llj" secondAttribute="height" multiplier="1:1" id="ZNg-8S-kOC"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zem-he-dK6">
+                    <rect key="frame" x="0.0" y="92" width="100" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4G-cI-tgA">
+                    <rect key="frame" x="0.0" y="78" width="100" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Zem-he-dK6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0XJ-FC-pfj"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Zem-he-dK6" secondAttribute="bottom" id="9ma-ad-cNn"/>
+                <constraint firstAttribute="trailing" secondItem="Zem-he-dK6" secondAttribute="trailing" id="EFp-Kd-ohb"/>
+                <constraint firstItem="Zem-he-dK6" firstAttribute="top" secondItem="t4G-cI-tgA" secondAttribute="bottom" constant="2" id="I1G-sH-rYW"/>
+                <constraint firstAttribute="trailing" secondItem="YzT-7B-llj" secondAttribute="trailing" constant="12" id="KOe-QE-037"/>
+                <constraint firstItem="t4G-cI-tgA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="XqE-AN-Q8N"/>
+                <constraint firstItem="YzT-7B-llj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="12" id="kOm-r3-40f"/>
+                <constraint firstItem="t4G-cI-tgA" firstAttribute="top" secondItem="YzT-7B-llj" secondAttribute="bottom" constant="2" id="rVw-xi-XOa"/>
+                <constraint firstAttribute="trailing" secondItem="t4G-cI-tgA" secondAttribute="trailing" id="tDB-jV-0Gp"/>
+                <constraint firstItem="YzT-7B-llj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="yeP-vs-70A"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imageViewPhoto" destination="YzT-7B-llj" id="JwK-c3-E4y"/>
+                <outlet property="labelBio" destination="Zem-he-dK6" id="AP2-Qx-Vdx"/>
+                <outlet property="labelName" destination="t4G-cI-tgA" id="KRj-gs-sy6"/>
+            </connections>
         </view>
     </objects>
+    <resources>
+        <image name="stepik_grey" width="1400" height="1400"/>
+    </resources>
 </document>

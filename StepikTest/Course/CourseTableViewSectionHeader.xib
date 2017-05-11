@@ -15,6 +15,10 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y34-xq-bld">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndK-7o-hxW">
                     <rect key="frame" x="25" y="61" width="75" height="28"/>
                     <constraints>
@@ -88,6 +92,10 @@
                 <constraint firstAttribute="trailing" secondItem="PWW-4g-QvY" secondAttribute="trailing" id="KwQ-gl-h5j"/>
                 <constraint firstAttribute="trailing" secondItem="qlk-YP-GDd" secondAttribute="trailing" constant="12" id="MdX-PZ-4SD"/>
                 <constraint firstItem="FWa-lz-3Oc" firstAttribute="leading" secondItem="cFo-B3-Qnq" secondAttribute="trailing" constant="50" id="Zez-Sc-qll"/>
+                <constraint firstItem="Y34-xq-bld" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="a0d-X7-bDC"/>
+                <constraint firstAttribute="trailing" secondItem="Y34-xq-bld" secondAttribute="trailing" id="ah0-MG-U4c"/>
+                <constraint firstItem="Y34-xq-bld" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="b3Y-wq-CfH"/>
+                <constraint firstAttribute="bottom" secondItem="Y34-xq-bld" secondAttribute="bottom" id="fDj-HP-K9d"/>
                 <constraint firstItem="vHf-eA-jEW" firstAttribute="top" secondItem="ndK-7o-hxW" secondAttribute="bottom" constant="8" id="flW-vo-TNo"/>
                 <constraint firstItem="vHf-eA-jEW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="jeW-Sz-PWI"/>
                 <constraint firstAttribute="bottom" secondItem="vHf-eA-jEW" secondAttribute="bottom" id="n4y-xr-Hni"/>

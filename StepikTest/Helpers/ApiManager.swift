@@ -30,7 +30,6 @@ class ApiManager {
         Alamofire.request(host + "/api/courses", parameters: parameters).responseJSON { response in
             if response.response?.statusCode == 200 {
                 if let value = response.result.value {
-                    
                     let json = JSON(value)
                     let coursesJSON = json["courses"]
                     
@@ -76,6 +75,11 @@ class ApiManager {
                         let requirements = courseJSON["requirements"].stringValue.decodedFromHtml()
                         course.requirements = self.valueOrNil(requirements)
                         
+                        if courseJSON["intro_video"].null == nil {
+                            let introVideoThumbnailLink = courseJSON["intro_video"]["thumbnail"].stringValue
+                            course.introVideoThumbnailLink = introVideoThumbnailLink
+                        }
+                        
                         courses.append(course)
                     }
                     completion(courses, hasNextPage)
@@ -95,29 +99,66 @@ class ApiManager {
         }
     }
     
-    func getCourseCover(coverUrl: String, cell: CourseCell) {
-        if let url = URL(string: host + coverUrl) {
-            cell.imageViewCover.image = UIImage(named: "stepik_grey")
-            Nuke.loadImage(with: url, into: cell.imageViewCover)
+    func getImage(url: String, putInto imageView: UIImageView) {
+        if let url = URL(string: url) {
+            imageView.image = UIImage(named: "stepik_grey")
+            Nuke.loadImage(with: url, into: imageView)
         }
     }
     
-    func getInstructor(course: Course, id: String) {
+    func getCourseCover(coverUrl: String, cell: CourseCell) {
+        getImage(url: host + coverUrl, putInto: cell.imageViewCover)
+//        
+//        if let url = URL(string: host + coverUrl) {
+//            cell.imageViewCover.image = UIImage(named: "stepik_grey")
+//            Nuke.loadImage(with: url, into: cell.imageViewCover)
+//        }
+    }
+    
+    func getCourseVideoThumbnail(url: String, imageView: UIImageView) {
+        if let url = URL(string: url) {
+            imageView.image = UIImage(named: "stepik_grey")
+            Nuke.loadImage(with: url, into: imageView)
+        }
+    }
+    
+    func getInstructors(IDs: [String], completion: @escaping (_ instructors: [User]) -> Void) {
+        var instructors: [User] = []
+        let downloadGroup = DispatchGroup()
+        for id in IDs {
+            downloadGroup.enter()
+            getInstructor(id: id) { instructor in
+                instructors.append(instructor)
+                downloadGroup.leave()
+                //if instructors.count == IDs.count {
+                //    completion(instructors)
+                //}
+            }
+        }
+        
+        downloadGroup.notify(queue: DispatchQueue.main) { // 2
+            completion(instructors)
+        }
+    }
+    
+    func getInstructor(id: String, completion: @escaping (_ instructor: User) -> Void) {
         
         Alamofire.request(host + "/api/users/" + id).responseJSON { response in
             if let value = response.result.value {
+                print(value)
                 let json = JSON(value)
                 if let userJSON = json["users"].first?.1 {
                     let firstName = userJSON["first_name"].stringValue
-                    let secondName = userJSON["second_name"].stringValue
+                    let secondName = userJSON["last_name"].stringValue
+                    let avatarLink = userJSON["avatar"].stringValue
                     let bio = userJSON["short_bio"].stringValue
                     
-                    let instructor = User(firstName: firstName, secondName: secondName)
+                    let instructor = User(firstName: firstName, secondName: secondName, avatarLink: avatarLink)
                     if !bio.isEmpty {
                         instructor.bio = bio
                     }
                     
-                    //course.instructors.append(instructor)
+                    completion(instructor)
                 }
             }
         }

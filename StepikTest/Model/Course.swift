@@ -19,6 +19,7 @@ class Course {
     var coverUrl: String?
     
     var instructorsIDs: [String] = []
+    var instructors: [User] = []
     
     var description: String?
     var workload: String?
@@ -26,6 +27,8 @@ class Course {
     var audience: String?
     var format: String?
     var requirements: String?
+    
+    var introVideoThumbnailLink: String?
     
     init(title: String, summary: String) {
         self.title = title

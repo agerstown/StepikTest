@@ -9,7 +9,7 @@
 import UIKit
 
 class CourseDetailedTableViewDataSource: NSObject, UITableViewDataSource {
-    
+
     let course: Course
     
     let defaultCell = UINib(nibName: "DefaultCourseInfoItemCell", bundle: nil)

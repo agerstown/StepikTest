@@ -10,4 +10,13 @@ import UIKit
 
 class InstructorCell: UICollectionViewCell {
     
+    @IBOutlet weak var imageViewPhoto: UIImageView!
+    @IBOutlet weak var labelName: UILabel!
+    @IBOutlet weak var labelBio: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        imageViewPhoto.layer.cornerRadius = imageViewPhoto.frame.height / 2
+    }
+    
 }

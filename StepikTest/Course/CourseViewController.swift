@@ -11,6 +11,7 @@ import UIKit
 class CourseViewController: UIViewController {
 
     @IBOutlet weak var videoView: UIView!
+    @IBOutlet weak var imageViewVideoThumbnail: UIImageView!
     @IBOutlet weak var tableViewCourseInfo: UITableView!
     
     var course: Course?
@@ -25,6 +26,8 @@ class CourseViewController: UIViewController {
     
     var tabs: [UIButton]?
     
+    let overviewTableView = UITableView()
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +40,33 @@ class CourseViewController: UIViewController {
         
         let courseInfoCellNib = UINib(nibName: "CourseInfoCell", bundle: nil)
         tableViewCourseInfo.register(courseInfoCellNib, forCellReuseIdentifier: "CourseInfoCell")
+        
+        getVideoThumbnail()
+        
+        ApiManager.shared.getInstructors(IDs: course!.instructorsIDs) { instructors in
+            self.course?.instructors = instructors
+            if let instructorsCell = self.overviewTableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? InstructorsCell {
+                instructorsCell.collectionViewInstructors.reloadData()
+            }
+        }
     }
     
+    func getVideoThumbnail() {
+        if let introVideoThumbnailLink = course?.introVideoThumbnailLink {
+            videoView.isHidden = false
+            ApiManager.shared.getCourseVideoThumbnail(url: introVideoThumbnailLink, imageView: imageViewVideoThumbnail)
+        } else {
+            videoView.frame = CGRect(x: videoView.bounds.origin.x,
+                                     y: videoView.bounds.origin.y,
+                                     width: videoView.bounds.size.width,
+                                     height: 0)
+            videoView.isHidden = true
+        }
+    }
+    
+    func getInstructors() {
+        
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -51,25 +79,30 @@ extension CourseViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewCourseInfo.dequeueReusableCell(withIdentifier: "CourseInfoCell") as! CourseInfoCell
         cell.scrollView.delegate = self
-        cell.scrollView.bounds.size.height -= videoView.bounds.size.height + headerHeight + self.navigationController!.navigationBar.bounds.height + UIApplication.shared.statusBarFrame.height
-        cell.scrollView.contentSize = CGSize(width: self.view.bounds.width * 3, height: cell.scrollView.bounds.height)
         
-        let overviewTableView = UITableView(frame: CGRect(x: cell.scrollView.bounds.origin.x, y: cell.scrollView.bounds.origin.y, width: cell.scrollView.bounds.width, height: cell.scrollView.bounds.height))
+        cell.scrollView.bounds.size.height -= (videoView.bounds.size.height + headerHeight + self.navigationController!.navigationBar.bounds.height + UIApplication.shared.statusBarFrame.height)
+        
+        cell.scrollView.contentSize = CGSize(width: self.view.bounds.width * 3, height: cell.scrollView.bounds.size.height)
+        
+//        let overviewTableView = UITableView(frame: CGRect(x: cell.scrollView.bounds.origin.x, y: cell.scrollView.bounds.origin.y, width: cell.scrollView.bounds.width, height: cell.scrollView.bounds.height))
+        overviewTableView.frame = CGRect(x: cell.scrollView.bounds.origin.x, y: cell.scrollView.bounds.origin.y, width: cell.scrollView.bounds.width, height: cell.scrollView.bounds.height)
+        overviewTableView.tableFooterView = UIView()
         overviewTableViewDataSource = CourseOverviewTableViewDataSource(tableView: overviewTableView, course: course!)
         overviewTableView.dataSource = overviewTableViewDataSource
         overviewTableView.allowsSelection = false
-        // self-sized cells
+       
         overviewTableView.estimatedRowHeight = 100
         overviewTableView.rowHeight = UITableViewAutomaticDimension
         
         let detailedTableView = UITableView(frame: CGRect(x: cell.scrollView.bounds.width, y: cell.scrollView.bounds.origin.y, width: cell.scrollView.bounds.width, height: cell.scrollView.bounds.height))
+        detailedTableView.tableFooterView = UIView()
         detailedTableViewDataSource = CourseDetailedTableViewDataSource(tableView: detailedTableView, course: course!)
         detailedTableView.dataSource = detailedTableViewDataSource
+        detailedTableView.reloadData()
         detailedTableView.allowsSelection = false
+        
         detailedTableView.estimatedRowHeight = 100
         detailedTableView.rowHeight = UITableViewAutomaticDimension
-        
-        
         
         cell.scrollView.addSubview(overviewTableView)
         cell.scrollView.addSubview(detailedTableView)
@@ -144,3 +177,4 @@ extension CourseViewController: CourseHeaderDelegate {
         }
     }
 }
+

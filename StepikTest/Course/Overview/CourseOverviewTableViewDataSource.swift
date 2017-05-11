@@ -14,16 +14,16 @@ class CourseOverviewTableViewDataSource: NSObject, UITableViewDataSource {
     
     var course: Course
     
-    let summaryCell = UINib(nibName: "DefaultCourseInfoItemCell", bundle: nil)
-    let instructorsCell = UINib(nibName: "InstructorsCell", bundle: nil)
+    let summaryCellNib = UINib(nibName: "DefaultCourseInfoItemCell", bundle: nil)
+    let instructorsCellNib = UINib(nibName: "InstructorsCell", bundle: nil)
     
     init(tableView: UITableView, course: Course) {
         
         self.tableView = tableView
         self.course = course
         
-        tableView.register(summaryCell, forCellReuseIdentifier: "DefaultCourseInfoItemCell")
-        tableView.register(instructorsCell, forCellReuseIdentifier: "InstructorsCell")
+        tableView.register(summaryCellNib, forCellReuseIdentifier: "DefaultCourseInfoItemCell")
+        tableView.register(instructorsCellNib, forCellReuseIdentifier: "InstructorsCell")
         
         super.init()
     }
@@ -43,6 +43,11 @@ class CourseOverviewTableViewDataSource: NSObject, UITableViewDataSource {
         case 1:
             let instructorsCell = tableView.dequeueReusableCell(withIdentifier: "InstructorsCell") as! InstructorsCell
             instructorsCell.collectionViewInstructors.dataSource = self
+            //instructorsCell.collectionViewInstructors.reloadData()
+            
+            let nib = UINib(nibName: "InstructorCell", bundle: nil)
+            instructorsCell.collectionViewInstructors.register(nib, forCellWithReuseIdentifier: "InstructorCell")
+            
             setInstructorsCollectionViewInsets(cell: instructorsCell)
             return instructorsCell
         default:
@@ -72,12 +77,21 @@ class CourseOverviewTableViewDataSource: NSObject, UITableViewDataSource {
 extension CourseOverviewTableViewDataSource: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return course.instructorsIDs.count
+        return course.instructors.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "InstructorCell", for: indexPath)
-        cell.backgroundColor = UIColor.black
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "InstructorCell", for: indexPath) as! InstructorCell
+        
+        let instructor = course.instructors[indexPath.row]
+        cell.labelName.text = instructor.firstName + " " + instructor.secondName
+        if let bio = instructor.bio {
+            cell.labelBio.text = bio
+        }
+        
+        ApiManager.shared.getImage(url: instructor.avatarLink, putInto: cell.imageViewPhoto)
+        
+        //cell.imageViewPhoto.image = course.instructors[indexPath.row].bio
         return cell;
     }
    
