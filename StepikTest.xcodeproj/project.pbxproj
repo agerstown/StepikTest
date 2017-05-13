@@ -34,11 +34,11 @@
 		6185ECA61EC28CBC00197FB1 /* InstructorsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6185ECA51EC28CBC00197FB1 /* InstructorsCell.xib */; };
 		618D85AD1EC790AB008936E0 /* SectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 618D85AC1EC790AB008936E0 /* SectionCell.xib */; };
 		618D85AF1EC7910C008936E0 /* SectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618D85AE1EC7910C008936E0 /* SectionCell.swift */; };
+		618D85B21EC79D53008936E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 618D85B01EC79D53008936E0 /* Main.storyboard */; };
+		618D85B51EC79D5F008936E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 618D85B31EC79D5F008936E0 /* LaunchScreen.storyboard */; };
+		618D85B71EC7A9F1008936E0 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618D85B61EC7A9F1008936E0 /* UITableView+Extensions.swift */; };
 		61C43A0D1EB7A1BB00DED919 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C43A0C1EB7A1BB00DED919 /* AppDelegate.swift */; };
-		61C43A121EB7A1BB00DED919 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61C43A101EB7A1BB00DED919 /* Main.storyboard */; };
-		61C43A171EB7A1BB00DED919 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61C43A151EB7A1BB00DED919 /* LaunchScreen.storyboard */; };
 		61C43A221EB7A1BB00DED919 /* StepikTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C43A211EB7A1BB00DED919 /* StepikTestTests.swift */; };
-		61C43A2D1EB7A1BB00DED919 /* StepikTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C43A2C1EB7A1BB00DED919 /* StepikTestUITests.swift */; };
 		61DBB6111EBA8953006BCCE1 /* StatusBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DBB6101EBA8953006BCCE1 /* StatusBarManager.swift */; };
 		92582A5A87000CDA75302994 /* Pods_StepikTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA15E2B9139F60697CD39ED8 /* Pods_StepikTest.framework */; };
 /* End PBXBuildFile section */
@@ -90,17 +90,16 @@
 		6185ECA51EC28CBC00197FB1 /* InstructorsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstructorsCell.xib; sourceTree = "<group>"; };
 		618D85AC1EC790AB008936E0 /* SectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionCell.xib; sourceTree = "<group>"; };
 		618D85AE1EC7910C008936E0 /* SectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionCell.swift; sourceTree = "<group>"; };
+		618D85B11EC79D53008936E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		618D85B41EC79D5F008936E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		618D85B61EC7A9F1008936E0 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		61C43A091EB7A1BB00DED919 /* StepikTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StepikTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61C43A0C1EB7A1BB00DED919 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		61C43A111EB7A1BB00DED919 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		61C43A161EB7A1BB00DED919 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		61C43A181EB7A1BB00DED919 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61C43A1D1EB7A1BB00DED919 /* StepikTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StepikTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		61C43A211EB7A1BB00DED919 /* StepikTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepikTestTests.swift; sourceTree = "<group>"; };
 		61C43A231EB7A1BB00DED919 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61C43A281EB7A1BB00DED919 /* StepikTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StepikTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		61C43A2C1EB7A1BB00DED919 /* StepikTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepikTestUITests.swift; sourceTree = "<group>"; };
-		61C43A2E1EB7A1BB00DED919 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61DBB6101EBA8953006BCCE1 /* StatusBarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarManager.swift; sourceTree = "<group>"; };
 		941A1B308C5AEF352858A4C2 /* Pods-StepikTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StepikTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-StepikTest/Pods-StepikTest.release.xcconfig"; sourceTree = "<group>"; };
 		FA15E2B9139F60697CD39ED8 /* Pods_StepikTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StepikTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,8 +164,8 @@
 		6144CED71EB7AFDF00C0E105 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				61C43A101EB7A1BB00DED919 /* Main.storyboard */,
-				61C43A151EB7A1BB00DED919 /* LaunchScreen.storyboard */,
+				618D85B31EC79D5F008936E0 /* LaunchScreen.storyboard */,
+				618D85B01EC79D53008936E0 /* Main.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -193,6 +192,7 @@
 			children = (
 				615250CB1EC0DC080034F492 /* String+HtmlDecoding.swift */,
 				614A2A8D1EC3BAC9002DF5F1 /* UIColor+Stepik.swift */,
+				618D85B61EC7A9F1008936E0 /* UITableView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -232,7 +232,6 @@
 			children = (
 				61C43A0B1EB7A1BB00DED919 /* StepikTest */,
 				61C43A201EB7A1BB00DED919 /* StepikTestTests */,
-				61C43A2B1EB7A1BB00DED919 /* StepikTestUITests */,
 				61C43A0A1EB7A1BB00DED919 /* Products */,
 				934145D6793042E62C028AD9 /* Pods */,
 				77223C7601B2D1A5994FAFDE /* Frameworks */,
@@ -272,15 +271,6 @@
 				61C43A231EB7A1BB00DED919 /* Info.plist */,
 			);
 			path = StepikTestTests;
-			sourceTree = "<group>";
-		};
-		61C43A2B1EB7A1BB00DED919 /* StepikTestUITests */ = {
-			isa = PBXGroup;
-			children = (
-				61C43A2C1EB7A1BB00DED919 /* StepikTestUITests.swift */,
-				61C43A2E1EB7A1BB00DED919 /* Info.plist */,
-			);
-			path = StepikTestUITests;
 			sourceTree = "<group>";
 		};
 		77223C7601B2D1A5994FAFDE /* Frameworks */ = {
@@ -412,13 +402,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				618D85B51EC79D5F008936E0 /* LaunchScreen.storyboard in Resources */,
 				6185ECA41EC28CB000197FB1 /* InstructorCell.xib in Resources */,
 				6185EC9E1EC28C7A00197FB1 /* CourseInfoCell.xib in Resources */,
-				61C43A171EB7A1BB00DED919 /* LaunchScreen.storyboard in Resources */,
 				6185ECA61EC28CBC00197FB1 /* InstructorsCell.xib in Resources */,
-				61C43A121EB7A1BB00DED919 /* Main.storyboard in Resources */,
 				6185ECA21EC28CA100197FB1 /* CourseTableViewSectionHeader.xib in Resources */,
 				614A2A901EC3C714002DF5F1 /* Assets.xcassets in Resources */,
+				618D85B21EC79D53008936E0 /* Main.storyboard in Resources */,
 				6185ECA01EC28C9500197FB1 /* DefaultCourseInfoItemCell.xib in Resources */,
 				618D85AD1EC790AB008936E0 /* SectionCell.xib in Resources */,
 			);
@@ -505,6 +495,7 @@
 				6144CED91EB7B03100C0E105 /* Course.swift in Sources */,
 				614A2A8A1EC3ADBF002DF5F1 /* CourseDetailedTableViewDataSource.swift in Sources */,
 				6144CEE11EB7D1E400C0E105 /* ApiManager.swift in Sources */,
+				618D85B71EC7A9F1008936E0 /* UITableView+Extensions.swift in Sources */,
 				615250D61EC11DAD0034F492 /* CourseTableViewSectionHeader.swift in Sources */,
 				618D85AF1EC7910C008936E0 /* SectionCell.swift in Sources */,
 				615250D01EC10F930034F492 /* CourseInfoCell.swift in Sources */,
@@ -530,7 +521,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61C43A2D1EB7A1BB00DED919 /* StepikTestUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,22 +540,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		61C43A101EB7A1BB00DED919 /* Main.storyboard */ = {
+		618D85B01EC79D53008936E0 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				61C43A111EB7A1BB00DED919 /* Base */,
+				618D85B11EC79D53008936E0 /* Base */,
 			);
 			name = Main.storyboard;
-			path = ..;
 			sourceTree = "<group>";
 		};
-		61C43A151EB7A1BB00DED919 /* LaunchScreen.storyboard */ = {
+		618D85B31EC79D5F008936E0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				61C43A161EB7A1BB00DED919 /* Base */,
+				618D85B41EC79D5F008936E0 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -21,7 +21,7 @@ class CoursesViewController: UIViewController {
     
     // Я гружу новые курсы, когда юзер доскроллил до 5й ячейки с конца (делаю запрос на сервер с указанием страницы X). 
     // Перед тем, как делать запрос, нужно проверить, получен ли ответ на предыдущий (loading = false),
-    // чтобы не подгрузить двойную дозу курсов (страницы X и X+1).
+    // чтобы не загрузить курсы с одной и той же страницы X несколько раз.
     // Так может получиться, если сначала отобразится пятая ячейка с конца, затем юзер прокрутит экран наверх так,
     // что эту ячейку уже не станет видно, а потом прокрутит опять вниз, в то время как новые данные еще не загрузились.
     // Вызовется метод ... cellForRowAt ... и получится, что эта ячейка опять пятая с конца и запрос на сервер 
@@ -29,8 +29,6 @@ class CoursesViewController: UIViewController {
     var loading = false
     
     var courses: [Course] = []
-    
-    let dateFormatter = DateFormatter()
     
     var lastLoadedPageNumber = 1
     
@@ -47,8 +45,6 @@ class CoursesViewController: UIViewController {
         
         refreshControl.addTarget(self, action: #selector(handleRefresh(refreshControl:)), for: UIControlEvents.valueChanged)
         tableViewCourses.refreshControl = refreshControl
-        
-        dateFormatter.dateStyle = .short
         
         startSpinning()
         reloadCoursesTable() {
@@ -82,7 +78,7 @@ class CoursesViewController: UIViewController {
     func startSpinning() {
         tableViewCourses.isHidden = true
         
-        activityIndicatorInitialLoading.center = self.view.center
+        activityIndicatorInitialLoading.center = CGPoint(x: self.view.bounds.width / 2, y: self.view.bounds.height / 2)
         self.view.addSubview(activityIndicatorInitialLoading)
         activityIndicatorInitialLoading.startAnimating()
     }
@@ -113,16 +109,7 @@ extension CoursesViewController: UITableViewDataSource {
         
         cell.labelTitle.text = course.title
         cell.labelSummary.text = course.summary
-        
-        if let beginDate = course.beginDate, let endDate = course.endDate {
-            cell.labelDate.text = dateFormatter.string(from: beginDate) + " " + dateFormatter.string(from: endDate)
-        } else if let beginDate = course.beginDate {
-            cell.labelDate.text = "from " + dateFormatter.string(from: beginDate)
-        } else if let endDate = course.endDate {
-            cell.labelDate.text = "until " + dateFormatter.string(from: endDate)
-        } else {
-            cell.labelDate.text = ""
-        }
+        cell.labelDate.text = course.stringDate
         
         if let coverUrl = course.coverUrl {
             ApiManager.shared.getCourseCover(coverUrl: coverUrl, cell: cell)

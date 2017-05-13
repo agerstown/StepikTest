@@ -14,16 +14,15 @@ class CourseOverviewTableViewDataSource: NSObject, UITableViewDataSource {
     
     var course: Course
     
-    let summaryCellNib = UINib(nibName: "DefaultCourseInfoItemCell", bundle: nil)
-    let instructorsCellNib = UINib(nibName: "InstructorsCell", bundle: nil)
+    let instructorCellIdentifier = String(describing: InstructorCell.self)
     
     init(tableView: UITableView, course: Course) {
         
         self.tableView = tableView
         self.course = course
         
-        tableView.register(summaryCellNib, forCellReuseIdentifier: "DefaultCourseInfoItemCell")
-        tableView.register(instructorsCellNib, forCellReuseIdentifier: "InstructorsCell")
+        tableView.registerNib(DefaultCourseInfoItemCell.self)
+        tableView.registerNib(InstructorsCell.self)
         
         super.init()
     }
@@ -36,16 +35,16 @@ class CourseOverviewTableViewDataSource: NSObject, UITableViewDataSource {
     
         switch(indexPath.row) {
         case 0:
-            let summaryCell = tableView.dequeueReusableCell(withIdentifier: "DefaultCourseInfoItemCell") as! DefaultCourseInfoItemCell
+            let summaryCell = tableView.dequeue(DefaultCourseInfoItemCell.self)
             summaryCell.labelTitle.text = "Summary"
             summaryCell.labelText.text = course.summary
             return summaryCell
         case 1:
-            let instructorsCell = tableView.dequeueReusableCell(withIdentifier: "InstructorsCell") as! InstructorsCell
+            let instructorsCell = tableView.dequeue(InstructorsCell.self)
             instructorsCell.collectionViewInstructors.dataSource = self
             
-            let nib = UINib(nibName: "InstructorCell", bundle: nil)
-            instructorsCell.collectionViewInstructors.register(nib, forCellWithReuseIdentifier: "InstructorCell")
+            let nib = UINib(nibName: instructorCellIdentifier, bundle: nil)
+            instructorsCell.collectionViewInstructors.register(nib, forCellWithReuseIdentifier: instructorCellIdentifier)
             
             setInstructorsCollectionViewInsets(cell: instructorsCell)
             return instructorsCell
@@ -80,7 +79,7 @@ extension CourseOverviewTableViewDataSource: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "InstructorCell", for: indexPath) as! InstructorCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: instructorCellIdentifier, for: indexPath) as! InstructorCell
         
         let instructor = course.instructors[indexPath.row]
         cell.labelName.text = instructor.firstName + " " + instructor.secondName

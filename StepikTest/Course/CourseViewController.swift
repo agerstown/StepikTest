@@ -47,11 +47,8 @@ class CourseViewController: UIViewController {
         
         courseInfoTableViews.append(contentsOf: [overviewTableView, detailedTableView, syllabusTableView])
         
-        let sectionHeaderNib = UINib(nibName: "CourseTableViewSectionHeader", bundle: nil)
-        tableViewCourseInfo.register(sectionHeaderNib, forHeaderFooterViewReuseIdentifier: "CourseTableViewSectionHeader")
-        
-        let courseInfoCellNib = UINib(nibName: "CourseInfoCell", bundle: nil)
-        tableViewCourseInfo.register(courseInfoCellNib, forCellReuseIdentifier: "CourseInfoCell")
+        tableViewCourseInfo.registerHeaderFooterNib(CourseTableViewSectionHeader.self)
+        tableViewCourseInfo.registerNib(CourseInfoCell.self)
         
         getVideoThumbnail()
         getInstructors()
@@ -97,7 +94,7 @@ extension CourseViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableViewCourseInfo.dequeueReusableCell(withIdentifier: "CourseInfoCell") as! CourseInfoCell
+        let cell = tableViewCourseInfo.dequeue(CourseInfoCell.self)
         cell.scrollView.delegate = self
         
         cell.scrollView.bounds.size.height -= (headerHeight + navBarHeight + UIApplication.shared.statusBarFrame.height)
@@ -158,7 +155,7 @@ extension CourseViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = tableViewCourseInfo.dequeueReusableHeaderFooterView(withIdentifier: "CourseTableViewSectionHeader") as! CourseTableViewSectionHeader
+        let header = tableViewCourseInfo.dequeueHeaderFooter(CourseTableViewSectionHeader.self)
         header.courseTitle.text = course?.title
         header.buttonOverview.setTitleColor(UIColor.stepikBlueColor, for: .normal)
         header.courseHeaderDelegate = self

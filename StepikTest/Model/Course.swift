@@ -13,10 +13,25 @@ class Course {
     var title: String
     var summary: String
     
+    var coverUrl: String?
     var cover: UIImage?
+    
     var beginDate: Date?
     var endDate: Date?
-    var coverUrl: String?
+    
+    let dateFormatter = DateFormatter()
+    
+    var stringDate: String {
+        if let beginDate = beginDate, let endDate = endDate {
+            return dateFormatter.string(from: beginDate) + " " + dateFormatter.string(from: endDate)
+        } else if let beginDate = beginDate {
+            return "from " + dateFormatter.string(from: beginDate)
+        } else if let endDate = endDate {
+            return "until " + dateFormatter.string(from: endDate)
+        } else {
+            return ""
+        }
+    }
     
     var instructorsIDs: [Int] = []
     var instructors: [User] = []
@@ -36,5 +51,6 @@ class Course {
     init(title: String, summary: String) {
         self.title = title
         self.summary = summary
+        dateFormatter.dateStyle = .short
     }
 }

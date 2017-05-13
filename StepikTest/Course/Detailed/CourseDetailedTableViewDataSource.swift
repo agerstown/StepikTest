@@ -12,14 +12,12 @@ class CourseDetailedTableViewDataSource: NSObject, UITableViewDataSource {
 
     let course: Course
     
-    let defaultCell = UINib(nibName: "DefaultCourseInfoItemCell", bundle: nil)
-    
     var courseInfoItems: [CourseInfoItem] = []
     
     init(tableView: UITableView, course: Course) {
         self.course = course
         
-        tableView.register(defaultCell, forCellReuseIdentifier: "DefaultCourseInfoItemCell")
+        tableView.registerNib(DefaultCourseInfoItemCell.self)
         
         if let description = course.description {
             let item = CourseInfoItem(title: "Description", text: description)
@@ -54,7 +52,7 @@ class CourseDetailedTableViewDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DefaultCourseInfoItemCell") as! DefaultCourseInfoItemCell
+        let cell = tableView.dequeue(DefaultCourseInfoItemCell.self) 
         cell.labelTitle.text = courseInfoItems[indexPath.row].title
         cell.labelText.text = courseInfoItems[indexPath.row].text
         return cell
