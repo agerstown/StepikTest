@@ -81,6 +81,8 @@ class ApiManager {
                         if courseJSON["intro_video"].null == nil {
                             let introVideoThumbnailLink = courseJSON["intro_video"]["thumbnail"].stringValue
                             course.introVideoThumbnailLink = introVideoThumbnailLink
+                            let introVideoLink = courseJSON["intro_video"]["urls"][0]["url"].stringValue
+                            course.introVideoLink = introVideoLink
                         }
                         
                         courses.append(course)

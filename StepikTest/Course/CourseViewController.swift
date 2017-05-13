@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import AVFoundation
+import AVKit
 
 class CourseViewController: UIViewController {
 
+    @IBOutlet weak var tableViewCourseInfo: UITableView!
+    
     @IBOutlet weak var videoView: UIView!
     @IBOutlet weak var imageViewVideoThumbnail: UIImageView!
-    @IBOutlet weak var tableViewCourseInfo: UITableView!
+    @IBOutlet weak var webViewVideo: UIWebView!
+    @IBOutlet weak var buttonPlayVideo: UIButton!
     
     var course: Course?
     
@@ -38,6 +43,8 @@ class CourseViewController: UIViewController {
     var tabs: [UIButton]?
     var courseInfoTableViews: [UITableView] = []
     
+    var playerViewController = AVPlayerViewController()
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +60,12 @@ class CourseViewController: UIViewController {
         getVideoThumbnail()
         getInstructors()
         getSections()
+        
+        setUpPlayer()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        playerViewController.player?.pause()
     }
     
     // MARK: - Getting data from server
@@ -81,6 +94,31 @@ class CourseViewController: UIViewController {
             self.course?.sections = sections
             self.syllabusTableView.reloadData()
         }
+    }
+    
+    func setUpPlayer() {
+        if let introVideoLink = course!.introVideoLink {
+            if let videoURL = URL(string: introVideoLink) {
+                
+                let asset = AVAsset(url: videoURL)  
+                let playerItem = AVPlayerItem(asset: asset)
+                let player = AVPlayer(playerItem: playerItem)
+                
+                playerViewController.player = player
+                playerViewController.view.frame = CGRect(x: videoView.bounds.origin.x,
+                                                         y: videoView.bounds.origin.y,
+                                                         width: videoView.bounds.size.width,
+                                                         height: videoView.bounds.size.height)
+                playerViewController.view.isHidden = true
+                videoView.addSubview(playerViewController.view)
+            }
+        }
+    }
+    
+    // MARK: - Actions
+    @IBAction func buttonPlayVideoTapped(_ sender: Any) {
+        playerViewController.view.isHidden = false
+        playerViewController.player?.play()
     }
     
 }

@@ -148,6 +148,9 @@
                                                 <constraint firstAttribute="height" constant="64" id="lkB-mJ-G4H"/>
                                             </constraints>
                                             <state key="normal" image="play"/>
+                                            <connections>
+                                                <action selector="buttonPlayVideoTapped:" destination="7zu-hk-24w" eventType="touchUpInside" id="Cc8-FD-D6K"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -171,6 +174,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Course" id="FNQ-Ug-VTO"/>
                     <connections>
+                        <outlet property="buttonPlayVideo" destination="T2U-R5-Ooo" id="XAA-xd-7BL"/>
                         <outlet property="imageViewVideoThumbnail" destination="n7d-Vo-zG8" id="9jN-eA-1fa"/>
                         <outlet property="tableViewCourseInfo" destination="ihZ-tg-Ysa" id="kZ9-KN-jwR"/>
                         <outlet property="videoView" destination="lvU-fM-t9h" id="wZG-aS-Hje"/>
@@ -178,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DdN-3r-dfz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1759" y="437"/>
+            <point key="canvasLocation" x="1709.5999999999999" y="55.322338830584712"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9YJ-9T-zqq">

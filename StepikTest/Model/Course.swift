@@ -47,6 +47,7 @@ class Course {
     var requirements: String?
     
     var introVideoThumbnailLink: String?
+    var introVideoLink: String?
     
     init(title: String, summary: String) {
         self.title = title
