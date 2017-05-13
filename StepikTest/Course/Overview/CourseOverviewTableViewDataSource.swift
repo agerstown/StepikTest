@@ -29,7 +29,7 @@ class CourseOverviewTableViewDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return course.instructors.count > 0 ? 2 : 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -43,7 +43,6 @@ class CourseOverviewTableViewDataSource: NSObject, UITableViewDataSource {
         case 1:
             let instructorsCell = tableView.dequeueReusableCell(withIdentifier: "InstructorsCell") as! InstructorsCell
             instructorsCell.collectionViewInstructors.dataSource = self
-            //instructorsCell.collectionViewInstructors.reloadData()
             
             let nib = UINib(nibName: "InstructorCell", bundle: nil)
             instructorsCell.collectionViewInstructors.register(nib, forCellWithReuseIdentifier: "InstructorCell")
@@ -91,7 +90,6 @@ extension CourseOverviewTableViewDataSource: UICollectionViewDataSource {
         
         ApiManager.shared.getImage(url: instructor.avatarLink, putInto: cell.imageViewPhoto)
         
-        //cell.imageViewPhoto.image = course.instructors[indexPath.row].bio
         return cell;
     }
    

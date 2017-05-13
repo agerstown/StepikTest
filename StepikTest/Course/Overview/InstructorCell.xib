@@ -17,20 +17,20 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stepik_grey" translatesAutoresizingMaskIntoConstraints="NO" id="YzT-7B-llj">
-                    <rect key="frame" x="12" y="0.0" width="76" height="76"/>
+                    <rect key="frame" x="14" y="0.0" width="72" height="72"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="YzT-7B-llj" secondAttribute="height" multiplier="1:1" id="ZNg-8S-kOC"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zem-he-dK6">
-                    <rect key="frame" x="0.0" y="92" width="100" height="0.0"/>
+                    <rect key="frame" x="0.0" y="89.5" width="100" height="0.0"/>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4G-cI-tgA">
-                    <rect key="frame" x="0.0" y="78" width="100" height="12"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <rect key="frame" x="0.0" y="74" width="100" height="13.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -40,9 +40,9 @@
                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Zem-he-dK6" secondAttribute="bottom" id="9ma-ad-cNn"/>
                 <constraint firstAttribute="trailing" secondItem="Zem-he-dK6" secondAttribute="trailing" id="EFp-Kd-ohb"/>
                 <constraint firstItem="Zem-he-dK6" firstAttribute="top" secondItem="t4G-cI-tgA" secondAttribute="bottom" constant="2" id="I1G-sH-rYW"/>
-                <constraint firstAttribute="trailing" secondItem="YzT-7B-llj" secondAttribute="trailing" constant="12" id="KOe-QE-037"/>
+                <constraint firstAttribute="trailing" secondItem="YzT-7B-llj" secondAttribute="trailing" constant="14" id="KOe-QE-037"/>
                 <constraint firstItem="t4G-cI-tgA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="XqE-AN-Q8N"/>
-                <constraint firstItem="YzT-7B-llj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="12" id="kOm-r3-40f"/>
+                <constraint firstItem="YzT-7B-llj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="14" id="kOm-r3-40f"/>
                 <constraint firstItem="t4G-cI-tgA" firstAttribute="top" secondItem="YzT-7B-llj" secondAttribute="bottom" constant="2" id="rVw-xi-XOa"/>
                 <constraint firstAttribute="trailing" secondItem="t4G-cI-tgA" secondAttribute="trailing" id="tDB-jV-0Gp"/>
                 <constraint firstItem="YzT-7B-llj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="yeP-vs-70A"/>
@@ -56,6 +56,6 @@
         </view>
     </objects>
     <resources>
-        <image name="stepik_grey" width="1400" height="1400"/>
+        <image name="stepik_grey" width="1100" height="1100"/>
     </resources>
 </document>

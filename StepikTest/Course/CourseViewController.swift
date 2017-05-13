@@ -29,7 +29,9 @@ class CourseViewController: UIViewController {
     var syllabusTableViewDelegate: CourseInfoTableViewDelegate?
     
     var tableViewHeader: CourseTableViewSectionHeader?
+    
     let headerHeight: CGFloat = 100
+    let navBarHeight: CGFloat = 44
     
     var currentPage = 0
     
@@ -56,6 +58,7 @@ class CourseViewController: UIViewController {
         getSections()
     }
     
+    // MARK: - Getting data from server
     func getVideoThumbnail() {
         if let introVideoThumbnailLink = course?.introVideoThumbnailLink {
             videoView.isHidden = false
@@ -72,9 +75,7 @@ class CourseViewController: UIViewController {
     func getInstructors() {
         ApiManager.shared.getInstructors(IDs: course!.instructorsIDs) { instructors in
             self.course?.instructors = instructors
-            if let instructorsCell = self.overviewTableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? InstructorsCell {
-                instructorsCell.collectionViewInstructors.reloadData()
-            }
+            self.overviewTableView.reloadData()
         }
     }
     
@@ -99,7 +100,7 @@ extension CourseViewController: UITableViewDataSource {
         let cell = tableViewCourseInfo.dequeueReusableCell(withIdentifier: "CourseInfoCell") as! CourseInfoCell
         cell.scrollView.delegate = self
         
-        cell.scrollView.bounds.size.height -= (headerHeight + self.navigationController!.navigationBar.bounds.height + UIApplication.shared.statusBarFrame.height)
+        cell.scrollView.bounds.size.height -= (headerHeight + navBarHeight + UIApplication.shared.statusBarFrame.height)
         cell.scrollView.contentSize = CGSize(width: self.view.bounds.width * 3, height: cell.scrollView.bounds.size.height)
         
         overviewTableViewDataSource = CourseOverviewTableViewDataSource(tableView: overviewTableView, course: course!)
@@ -152,8 +153,7 @@ extension CourseViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension CourseViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return self.view.bounds.size.height - videoView.bounds.size.height - headerHeight - self.navigationController!.navigationBar.bounds.height - UIApplication.shared.statusBarFrame.height
-        return self.view.bounds.size.height - headerHeight - self.navigationController!.navigationBar.bounds.height - UIApplication.shared.statusBarFrame.height
+        return self.view.bounds.size.height - headerHeight - navBarHeight - UIApplication.shared.statusBarFrame.height
 
     }
     
@@ -197,7 +197,7 @@ extension CourseViewController: UIScrollViewDelegate {
                 currentPage = page
             }
         }
-        if scrollView.contentOffset.y > headerHeight + self.navigationController!.navigationBar.bounds.height {
+        if scrollView.contentOffset.y > headerHeight + navBarHeight {
             
             for tableView in courseInfoTableViews {
                 tableView.isUserInteractionEnabled = true

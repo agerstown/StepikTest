@@ -108,13 +108,7 @@
                             <constraint firstItem="Mxi-8s-GlS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="e6e-3v-MYj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Courses" id="CaX-kc-pAj">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="jOa-Zh-Zgg">
-                            <connections>
-                                <segue destination="3Am-TE-bRn" kind="show" id="bqi-tG-bLu"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Courses" id="CaX-kc-pAj"/>
                     <connections>
                         <outlet property="activityIndicatorTableViewBottom" destination="VuG-sH-b95" id="rkT-vs-L4o"/>
                         <outlet property="tableViewCourses" destination="Mxi-8s-GlS" id="Mwh-e9-Ar6"/>
@@ -124,67 +118,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="885.60000000000002" y="55.322338830584712"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="AT4-fE-DmU">
-            <objects>
-                <viewController id="3Am-TE-bRn" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="yie-2a-mt0"/>
-                        <viewControllerLayoutGuide type="bottom" id="bhy-oQ-kUf"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="zqR-wM-cTl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tPN-SF-2vb">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cJU-ix-NRN">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
-                                        <color key="backgroundColor" red="0.33571738000000001" green="0.61186337469999996" blue="0.986118257" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="Xxd-Wg-4jH"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sra-6d-PWv">
-                                        <rect key="frame" x="0.0" y="200" width="375" height="100"/>
-                                        <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="VOW-5H-Wr6"/>
-                                        </constraints>
-                                    </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nqQ-61-M9j">
-                                        <rect key="frame" x="0.0" y="301" width="375" height="238"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </tableView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="cJU-ix-NRN" firstAttribute="leading" secondItem="tPN-SF-2vb" secondAttribute="leading" id="3TM-IF-NbD"/>
-                                    <constraint firstAttribute="trailing" secondItem="nqQ-61-M9j" secondAttribute="trailing" id="5TR-fg-rRu"/>
-                                    <constraint firstItem="sra-6d-PWv" firstAttribute="leading" secondItem="tPN-SF-2vb" secondAttribute="leading" id="6uv-z1-upv"/>
-                                    <constraint firstItem="nqQ-61-M9j" firstAttribute="top" secondItem="sra-6d-PWv" secondAttribute="bottom" id="8wU-O3-jBG"/>
-                                    <constraint firstAttribute="trailing" secondItem="sra-6d-PWv" secondAttribute="trailing" id="P8t-2Z-6TD"/>
-                                    <constraint firstAttribute="bottom" secondItem="nqQ-61-M9j" secondAttribute="bottom" id="Zzt-PT-0IY"/>
-                                    <constraint firstItem="cJU-ix-NRN" firstAttribute="top" secondItem="tPN-SF-2vb" secondAttribute="top" id="jqG-Y1-Za3"/>
-                                    <constraint firstItem="sra-6d-PWv" firstAttribute="top" secondItem="cJU-ix-NRN" secondAttribute="bottom" id="oxv-Q4-SKW"/>
-                                    <constraint firstAttribute="trailing" secondItem="cJU-ix-NRN" secondAttribute="trailing" id="pbA-Fq-Kdz"/>
-                                    <constraint firstItem="nqQ-61-M9j" firstAttribute="leading" secondItem="tPN-SF-2vb" secondAttribute="leading" id="ujb-eR-RuE"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="tPN-SF-2vb" secondAttribute="trailing" constant="-16" id="HNh-5g-XO0"/>
-                            <constraint firstItem="bhy-oQ-kUf" firstAttribute="top" secondItem="tPN-SF-2vb" secondAttribute="bottom" id="cJm-rL-kQw"/>
-                            <constraint firstItem="tPN-SF-2vb" firstAttribute="top" secondItem="yie-2a-mt0" secondAttribute="bottom" id="wEf-En-JeY"/>
-                            <constraint firstItem="tPN-SF-2vb" firstAttribute="leading" secondItem="zqR-wM-cTl" secondAttribute="leadingMargin" constant="-16" id="ynO-wi-jy1"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aDy-UH-DIG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1732" y="-297.30134932533736"/>
         </scene>
         <!--Course-->
         <scene sceneID="R3a-3e-SSZ">
@@ -205,7 +138,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n7d-Vo-zG8">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n7d-Vo-zG8">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2U-R5-Ooo">
@@ -266,6 +199,6 @@
     </scenes>
     <resources>
         <image name="play" width="256" height="256"/>
-        <image name="stepik_grey" width="1000" height="1000"/>
+        <image name="stepik_grey" width="1100" height="1100"/>
     </resources>
 </document>

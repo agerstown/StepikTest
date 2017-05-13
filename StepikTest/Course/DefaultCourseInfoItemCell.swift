@@ -13,7 +13,4 @@ class DefaultCourseInfoItemCell: UITableViewCell {
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var labelText: UILabel!
     
-    @IBOutlet weak var constraintHeight: NSLayoutConstraint!
-    @IBOutlet weak var constraintWidth: NSLayoutConstraint!
-    
 }

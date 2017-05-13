@@ -49,7 +49,6 @@ class CourseDetailedTableViewDataSource: NSObject, UITableViewDataSource {
         super.init()
     }
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return courseInfoItems.count
     }

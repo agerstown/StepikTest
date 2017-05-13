@@ -12,11 +12,11 @@ class CourseSyllabusTableViewDataSource: NSObject, UITableViewDataSource {
     
     let course: Course
     
-    let defaultCell = UINib(nibName: "DefaultCourseInfoItemCell", bundle: nil)
+    let cell = UINib(nibName: "SectionCell", bundle: nil)
     
     init(tableView: UITableView, course: Course) {
         self.course = course
-        tableView.register(defaultCell, forCellReuseIdentifier: "DefaultCourseInfoItemCell")
+        tableView.register(cell, forCellReuseIdentifier: "SectionCell")
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -24,9 +24,10 @@ class CourseSyllabusTableViewDataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DefaultCourseInfoItemCell") as! DefaultCourseInfoItemCell
-        cell.labelTitle.text = course.sections.filter { $0.index == indexPath.row }.first?.title
-        //cell.labelText.text = courseInfoItems[indexPath.row].text
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SectionCell") as! SectionCell
+        if let section = course.sections.filter( { $0.index == indexPath.row + 1 } ).first {
+            cell.labelSectionTitle.text = "\(indexPath.row + 1). " + section.title
+        }
         return cell
     }
     

@@ -42,8 +42,6 @@
                 <constraint firstItem="jCf-YA-UsF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="kT5-G6-2cX"/>
             </constraints>
             <connections>
-                <outlet property="constraintHeight" destination="kT5-G6-2cX" id="fjs-4F-AGM"/>
-                <outlet property="constraintWidth" destination="hU3-q3-zsx" id="yZL-nq-ln4"/>
                 <outlet property="labelText" destination="sUV-lG-0pt" id="b4e-61-Dgz"/>
                 <outlet property="labelTitle" destination="jCf-YA-UsF" id="tOH-qa-9ES"/>
             </connections>

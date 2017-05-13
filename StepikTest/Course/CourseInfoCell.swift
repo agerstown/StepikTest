@@ -12,6 +12,4 @@ class CourseInfoCell: UITableViewCell {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-    
-    
 }

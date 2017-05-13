@@ -20,12 +20,4 @@ class StatusBarManager {
         notification.notificationLabelBackgroundColor = UIColor.red
         notification.display(withMessage: text, forDuration: TimeInterval(3))
     }
-    
-//    func showCustomStatusBarNeutral(text: String) {
-//        showCustomStatusBar(text: text, color: UIColor.blueTraverColor)
-//    }
-//    
-//    func showCustomStatusBarError(text: String) {
-//        showCustomStatusBar(text: text, color: UIColor.red)
-//    }
 }

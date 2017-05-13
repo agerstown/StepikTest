@@ -32,6 +32,8 @@
 		6185ECA21EC28CA100197FB1 /* CourseTableViewSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6185ECA11EC28CA100197FB1 /* CourseTableViewSectionHeader.xib */; };
 		6185ECA41EC28CB000197FB1 /* InstructorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6185ECA31EC28CB000197FB1 /* InstructorCell.xib */; };
 		6185ECA61EC28CBC00197FB1 /* InstructorsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6185ECA51EC28CBC00197FB1 /* InstructorsCell.xib */; };
+		618D85AD1EC790AB008936E0 /* SectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 618D85AC1EC790AB008936E0 /* SectionCell.xib */; };
+		618D85AF1EC7910C008936E0 /* SectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618D85AE1EC7910C008936E0 /* SectionCell.swift */; };
 		61C43A0D1EB7A1BB00DED919 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C43A0C1EB7A1BB00DED919 /* AppDelegate.swift */; };
 		61C43A121EB7A1BB00DED919 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61C43A101EB7A1BB00DED919 /* Main.storyboard */; };
 		61C43A171EB7A1BB00DED919 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61C43A151EB7A1BB00DED919 /* LaunchScreen.storyboard */; };
@@ -86,6 +88,8 @@
 		6185ECA11EC28CA100197FB1 /* CourseTableViewSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CourseTableViewSectionHeader.xib; sourceTree = "<group>"; };
 		6185ECA31EC28CB000197FB1 /* InstructorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstructorCell.xib; sourceTree = "<group>"; };
 		6185ECA51EC28CBC00197FB1 /* InstructorsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstructorsCell.xib; sourceTree = "<group>"; };
+		618D85AC1EC790AB008936E0 /* SectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionCell.xib; sourceTree = "<group>"; };
+		618D85AE1EC7910C008936E0 /* SectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionCell.swift; sourceTree = "<group>"; };
 		61C43A091EB7A1BB00DED919 /* StepikTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StepikTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61C43A0C1EB7A1BB00DED919 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61C43A111EB7A1BB00DED919 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -132,6 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				6120EA151EC746E000986255 /* CourseSyllabusTableViewDataSource.swift */,
+				618D85AC1EC790AB008936E0 /* SectionCell.xib */,
+				618D85AE1EC7910C008936E0 /* SectionCell.swift */,
 			);
 			path = Syllabus;
 			sourceTree = "<group>";
@@ -201,10 +207,10 @@
 				6185EC9F1EC28C9500197FB1 /* DefaultCourseInfoItemCell.xib */,
 				615250D51EC11DAD0034F492 /* CourseTableViewSectionHeader.swift */,
 				6185ECA11EC28CA100197FB1 /* CourseTableViewSectionHeader.xib */,
+				6120EA0E1EC719A100986255 /* CourseInfoTableViewDelegate.swift */,
 				6185EC9C1EC286DA00197FB1 /* Overview */,
 				614A2A881EC3AABF002DF5F1 /* Detailed */,
 				6120EA141EC7468C00986255 /* Syllabus */,
-				6120EA0E1EC719A100986255 /* CourseInfoTableViewDelegate.swift */,
 			);
 			path = Course;
 			sourceTree = "<group>";
@@ -414,6 +420,7 @@
 				6185ECA21EC28CA100197FB1 /* CourseTableViewSectionHeader.xib in Resources */,
 				614A2A901EC3C714002DF5F1 /* Assets.xcassets in Resources */,
 				6185ECA01EC28C9500197FB1 /* DefaultCourseInfoItemCell.xib in Resources */,
+				618D85AD1EC790AB008936E0 /* SectionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +506,7 @@
 				614A2A8A1EC3ADBF002DF5F1 /* CourseDetailedTableViewDataSource.swift in Sources */,
 				6144CEE11EB7D1E400C0E105 /* ApiManager.swift in Sources */,
 				615250D61EC11DAD0034F492 /* CourseTableViewSectionHeader.swift in Sources */,
+				618D85AF1EC7910C008936E0 /* SectionCell.swift in Sources */,
 				615250D01EC10F930034F492 /* CourseInfoCell.swift in Sources */,
 				615250DA1EC124610034F492 /* CourseOverviewTableViewDataSource.swift in Sources */,
 				61DBB6111EBA8953006BCCE1 /* StatusBarManager.swift in Sources */,

@@ -12,9 +12,5 @@ class InstructorsCell: UITableViewCell {
     
     @IBOutlet weak var labelInstructors: UILabel!
     @IBOutlet weak var collectionViewInstructors: UICollectionView!
-    
-    override func awakeFromNib() {
-        collectionViewInstructors.register(InstructorCell.self, forCellWithReuseIdentifier: "InstructorCell")
-    }
-    
+
 }

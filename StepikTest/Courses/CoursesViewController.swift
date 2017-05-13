@@ -120,6 +120,8 @@ extension CoursesViewController: UITableViewDataSource {
             cell.labelDate.text = "from " + dateFormatter.string(from: beginDate)
         } else if let endDate = course.endDate {
             cell.labelDate.text = "until " + dateFormatter.string(from: endDate)
+        } else {
+            cell.labelDate.text = ""
         }
         
         if let coverUrl = course.coverUrl {
