@@ -18,8 +18,11 @@ class Course {
     var endDate: Date?
     var coverUrl: String?
     
-    var instructorsIDs: [String] = []
+    var instructorsIDs: [Int] = []
     var instructors: [User] = []
+    
+    var sectionsIDs: [Int] = []
+    var sections: [Section] = []
     
     var description: String?
     var workload: String?

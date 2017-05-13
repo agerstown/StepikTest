@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6120EA0F1EC719A100986255 /* CourseInfoTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6120EA0E1EC719A100986255 /* CourseInfoTableViewDelegate.swift */; };
+		6120EA131EC7449400986255 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6120EA121EC7449400986255 /* Section.swift */; };
+		6120EA161EC746E000986255 /* CourseSyllabusTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6120EA151EC746E000986255 /* CourseSyllabusTableViewDataSource.swift */; };
 		6144CED41EB7A5DF00C0E105 /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6144CED31EB7A5DF00C0E105 /* CoursesViewController.swift */; };
 		6144CED91EB7B03100C0E105 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6144CED81EB7B03100C0E105 /* Course.swift */; };
 		6144CEDC1EB7B98D00C0E105 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6144CEDB1EB7B98D00C0E105 /* CourseCell.swift */; };
@@ -57,6 +60,9 @@
 
 /* Begin PBXFileReference section */
 		3E3101698F26DF03BB399474 /* Pods-StepikTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StepikTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StepikTest/Pods-StepikTest.debug.xcconfig"; sourceTree = "<group>"; };
+		6120EA0E1EC719A100986255 /* CourseInfoTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseInfoTableViewDelegate.swift; sourceTree = "<group>"; };
+		6120EA121EC7449400986255 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		6120EA151EC746E000986255 /* CourseSyllabusTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseSyllabusTableViewDataSource.swift; sourceTree = "<group>"; };
 		6144CED31EB7A5DF00C0E105 /* CoursesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
 		6144CED81EB7B03100C0E105 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		6144CEDB1EB7B98D00C0E105 /* CourseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
@@ -122,12 +128,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6120EA141EC7468C00986255 /* Syllabus */ = {
+			isa = PBXGroup;
+			children = (
+				6120EA151EC746E000986255 /* CourseSyllabusTableViewDataSource.swift */,
+			);
+			path = Syllabus;
+			sourceTree = "<group>";
+		};
 		6144CED51EB7AFBD00C0E105 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				6144CED81EB7B03100C0E105 /* Course.swift */,
 				6185EC9A1EC284D500197FB1 /* User.swift */,
 				614A2A8B1EC3B56B002DF5F1 /* CourseInfoItem.swift */,
+				6120EA121EC7449400986255 /* Section.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -188,6 +203,8 @@
 				6185ECA11EC28CA100197FB1 /* CourseTableViewSectionHeader.xib */,
 				6185EC9C1EC286DA00197FB1 /* Overview */,
 				614A2A881EC3AABF002DF5F1 /* Detailed */,
+				6120EA141EC7468C00986255 /* Syllabus */,
+				6120EA0E1EC719A100986255 /* CourseInfoTableViewDelegate.swift */,
 			);
 			path = Course;
 			sourceTree = "<group>";
@@ -472,7 +489,9 @@
 				615250CC1EC0DC080034F492 /* String+HtmlDecoding.swift in Sources */,
 				6144CEDC1EB7B98D00C0E105 /* CourseCell.swift in Sources */,
 				615250D21EC110BB0034F492 /* CourseViewController.swift in Sources */,
+				6120EA0F1EC719A100986255 /* CourseInfoTableViewDelegate.swift in Sources */,
 				614A2A8E1EC3BAC9002DF5F1 /* UIColor+Stepik.swift in Sources */,
+				6120EA131EC7449400986255 /* Section.swift in Sources */,
 				614A2A8C1EC3B56B002DF5F1 /* CourseInfoItem.swift in Sources */,
 				615250DE1EC1273D0034F492 /* DefaultCourseInfoItemCell.swift in Sources */,
 				6185EC9B1EC284D500197FB1 /* User.swift in Sources */,
@@ -487,6 +506,7 @@
 				61C43A0D1EB7A1BB00DED919 /* AppDelegate.swift in Sources */,
 				6185EC951EC26CDA00197FB1 /* InstructorsCell.swift in Sources */,
 				6144CED41EB7A5DF00C0E105 /* CoursesViewController.swift in Sources */,
+				6120EA161EC746E000986255 /* CourseSyllabusTableViewDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

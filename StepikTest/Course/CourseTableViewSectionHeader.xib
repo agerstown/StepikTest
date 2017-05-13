@@ -17,93 +17,89 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y34-xq-bld">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlk-YP-GDd">
+                            <rect key="frame" x="12" y="6" width="351" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="SAJ-5l-s1R"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XQ7-ZF-naA">
+                            <rect key="frame" x="0.0" y="64" width="375" height="28"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndK-7o-hxW">
+                                    <rect key="frame" x="0.0" y="0.0" width="125" height="28"/>
+                                    <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="13"/>
+                                    <state key="normal" title="OVERVIEW">
+                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="buttonOverviewTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="7n8-rX-3Vg"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFo-B3-Qnq">
+                                    <rect key="frame" x="125" y="0.0" width="125" height="28"/>
+                                    <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="13"/>
+                                    <state key="normal" title="DETAILED">
+                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="buttonDetailedTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="x18-RR-oQJ"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWa-lz-3Oc">
+                                    <rect key="frame" x="250" y="0.0" width="125" height="28"/>
+                                    <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="13"/>
+                                    <state key="normal" title="SYLLABUS">
+                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="buttonSyllabusTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="pEd-xo-Vmi"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PWW-4g-QvY">
+                            <rect key="frame" x="0.0" y="99" width="375" height="1"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.5" id="eHi-A4-ryr"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vHf-eA-jEW">
+                            <rect key="frame" x="0.0" y="97" width="125" height="3"/>
+                            <color key="backgroundColor" red="0.15124568343162537" green="0.52322274446487427" blue="0.98500484228134155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="3" id="tRE-wt-Qic"/>
+                            </constraints>
+                        </view>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndK-7o-hxW">
-                    <rect key="frame" x="25" y="61" width="75" height="28"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="75" id="KmL-eV-8gQ"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="13"/>
-                    <state key="normal" title="OVERVIEW">
-                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="buttonOverviewTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="7n8-rX-3Vg"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFo-B3-Qnq">
-                    <rect key="frame" x="150" y="61" width="75" height="28"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="75" id="Shp-eO-5ux"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="13"/>
-                    <state key="normal" title="DETAILED">
-                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="buttonDetailedTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="x18-RR-oQJ"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWa-lz-3Oc">
-                    <rect key="frame" x="275" y="61" width="75" height="28"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="75" id="DlA-0x-oYp"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="13"/>
-                    <state key="normal" title="SYLLABUS">
-                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="buttonSyllabusTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="pEd-xo-Vmi"/>
-                    </connections>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlk-YP-GDd">
-                    <rect key="frame" x="12" y="7" width="351" height="50"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="bwy-yO-aGQ"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PWW-4g-QvY">
-                    <rect key="frame" x="0.0" y="99" width="375" height="1"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="0.5" id="eHi-A4-ryr"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vHf-eA-jEW">
-                    <rect key="frame" x="0.0" y="97" width="125" height="3"/>
-                    <color key="backgroundColor" red="0.15124568343162537" green="0.52322274446487427" blue="0.98500484228134155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="125" id="6GJ-qI-4By"/>
-                        <constraint firstAttribute="height" constant="3" id="tRE-wt-Qic"/>
+                        <constraint firstAttribute="trailing" secondItem="XQ7-ZF-naA" secondAttribute="trailing" id="0PE-Ml-kaA"/>
+                        <constraint firstAttribute="trailing" secondItem="qlk-YP-GDd" secondAttribute="trailing" constant="12" id="3qQ-YW-20K"/>
+                        <constraint firstAttribute="bottom" secondItem="XQ7-ZF-naA" secondAttribute="bottom" constant="8" id="EEC-zy-PJa"/>
+                        <constraint firstItem="qlk-YP-GDd" firstAttribute="leading" secondItem="Y34-xq-bld" secondAttribute="leading" constant="12" id="EdN-QE-H2x"/>
+                        <constraint firstItem="XQ7-ZF-naA" firstAttribute="leading" secondItem="Y34-xq-bld" secondAttribute="leading" id="IMN-1t-Pxx"/>
+                        <constraint firstItem="vHf-eA-jEW" firstAttribute="leading" secondItem="Y34-xq-bld" secondAttribute="leading" id="IqU-d0-zQN"/>
+                        <constraint firstAttribute="trailing" secondItem="PWW-4g-QvY" secondAttribute="trailing" id="KCF-g2-Tkh"/>
+                        <constraint firstItem="XQ7-ZF-naA" firstAttribute="top" secondItem="qlk-YP-GDd" secondAttribute="bottom" constant="8" id="R42-vU-HNW"/>
+                        <constraint firstAttribute="bottom" secondItem="vHf-eA-jEW" secondAttribute="bottom" id="bhk-i7-NEJ"/>
+                        <constraint firstAttribute="bottom" secondItem="PWW-4g-QvY" secondAttribute="bottom" id="n7L-9X-8NQ"/>
+                        <constraint firstItem="PWW-4g-QvY" firstAttribute="leading" secondItem="Y34-xq-bld" secondAttribute="leading" id="p89-LZ-mfe"/>
+                        <constraint firstItem="vHf-eA-jEW" firstAttribute="width" secondItem="ndK-7o-hxW" secondAttribute="width" id="r2E-pz-TgG"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="PWW-4g-QvY" secondAttribute="bottom" id="4lf-t0-Nkk"/>
-                <constraint firstItem="qlk-YP-GDd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="12" id="BLe-am-wwi"/>
-                <constraint firstAttribute="trailing" secondItem="FWa-lz-3Oc" secondAttribute="trailing" constant="25" id="Ivr-7G-TPo"/>
-                <constraint firstItem="cFo-B3-Qnq" firstAttribute="top" secondItem="qlk-YP-GDd" secondAttribute="bottom" constant="4" id="J3w-e8-YMM"/>
-                <constraint firstAttribute="trailing" secondItem="PWW-4g-QvY" secondAttribute="trailing" id="KwQ-gl-h5j"/>
-                <constraint firstAttribute="trailing" secondItem="qlk-YP-GDd" secondAttribute="trailing" constant="12" id="MdX-PZ-4SD"/>
-                <constraint firstItem="FWa-lz-3Oc" firstAttribute="leading" secondItem="cFo-B3-Qnq" secondAttribute="trailing" constant="50" id="Zez-Sc-qll"/>
                 <constraint firstItem="Y34-xq-bld" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="a0d-X7-bDC"/>
                 <constraint firstAttribute="trailing" secondItem="Y34-xq-bld" secondAttribute="trailing" id="ah0-MG-U4c"/>
                 <constraint firstItem="Y34-xq-bld" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="b3Y-wq-CfH"/>
                 <constraint firstAttribute="bottom" secondItem="Y34-xq-bld" secondAttribute="bottom" id="fDj-HP-K9d"/>
-                <constraint firstItem="vHf-eA-jEW" firstAttribute="top" secondItem="ndK-7o-hxW" secondAttribute="bottom" constant="8" id="flW-vo-TNo"/>
-                <constraint firstItem="vHf-eA-jEW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="jeW-Sz-PWI"/>
-                <constraint firstAttribute="bottom" secondItem="vHf-eA-jEW" secondAttribute="bottom" id="n4y-xr-Hni"/>
-                <constraint firstItem="PWW-4g-QvY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="tnb-uX-JaK"/>
-                <constraint firstItem="cFo-B3-Qnq" firstAttribute="leading" secondItem="ndK-7o-hxW" secondAttribute="trailing" constant="50" id="ufJ-4e-68G"/>
-                <constraint firstItem="ndK-7o-hxW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="25" id="vDn-Si-fTR"/>
-                <constraint firstItem="vHf-eA-jEW" firstAttribute="top" secondItem="FWa-lz-3Oc" secondAttribute="bottom" constant="8" id="yDx-An-nqQ"/>
-                <constraint firstItem="vHf-eA-jEW" firstAttribute="top" secondItem="cFo-B3-Qnq" secondAttribute="bottom" constant="8" id="znH-Xs-4je"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
@@ -111,9 +107,9 @@
                 <outlet property="buttonOverview" destination="ndK-7o-hxW" id="zgr-Jp-ATh"/>
                 <outlet property="buttonSyllabus" destination="FWa-lz-3Oc" id="CcY-sm-x1V"/>
                 <outlet property="courseTitle" destination="qlk-YP-GDd" id="gqF-n7-kIA"/>
-                <outlet property="sectionIndicator" destination="vHf-eA-jEW" id="voV-v6-5Sa"/>
+                <outlet property="indicatorLeadingConstraint" destination="IqU-d0-zQN" id="VDV-3T-tQ6"/>
             </connections>
-            <point key="canvasLocation" x="18.5" y="-729"/>
+            <point key="canvasLocation" x="46" y="-634"/>
         </view>
     </objects>
 </document>

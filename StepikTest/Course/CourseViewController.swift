@@ -16,8 +16,17 @@ class CourseViewController: UIViewController {
     
     var course: Course?
     
+    let overviewTableView = UITableView()
+    let detailedTableView = UITableView()
+    let syllabusTableView = UITableView()
+    
     var overviewTableViewDataSource: CourseOverviewTableViewDataSource?
     var detailedTableViewDataSource: CourseDetailedTableViewDataSource?
+    var syllabusTableViewDataSource: CourseSyllabusTableViewDataSource?
+    
+    var overviewTableViewDelegate: CourseInfoTableViewDelegate?
+    var detailedTableViewDelegate: CourseInfoTableViewDelegate?
+    var syllabusTableViewDelegate: CourseInfoTableViewDelegate?
     
     var tableViewHeader: CourseTableViewSectionHeader?
     let headerHeight: CGFloat = 100
@@ -25,8 +34,7 @@ class CourseViewController: UIViewController {
     var currentPage = 0
     
     var tabs: [UIButton]?
-    
-    let overviewTableView = UITableView()
+    var courseInfoTableViews: [UITableView] = []
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -35,6 +43,8 @@ class CourseViewController: UIViewController {
         tableViewCourseInfo.dataSource = self
         tableViewCourseInfo.delegate = self
         
+        courseInfoTableViews.append(contentsOf: [overviewTableView, detailedTableView, syllabusTableView])
+        
         let sectionHeaderNib = UINib(nibName: "CourseTableViewSectionHeader", bundle: nil)
         tableViewCourseInfo.register(sectionHeaderNib, forHeaderFooterViewReuseIdentifier: "CourseTableViewSectionHeader")
         
@@ -42,13 +52,8 @@ class CourseViewController: UIViewController {
         tableViewCourseInfo.register(courseInfoCellNib, forCellReuseIdentifier: "CourseInfoCell")
         
         getVideoThumbnail()
-        
-        ApiManager.shared.getInstructors(IDs: course!.instructorsIDs) { instructors in
-            self.course?.instructors = instructors
-            if let instructorsCell = self.overviewTableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? InstructorsCell {
-                instructorsCell.collectionViewInstructors.reloadData()
-            }
-        }
+        getInstructors()
+        getSections()
     }
     
     func getVideoThumbnail() {
@@ -65,8 +70,21 @@ class CourseViewController: UIViewController {
     }
     
     func getInstructors() {
-        
+        ApiManager.shared.getInstructors(IDs: course!.instructorsIDs) { instructors in
+            self.course?.instructors = instructors
+            if let instructorsCell = self.overviewTableView.cellForRow(at: IndexPath(row: 1, section: 0)) as? InstructorsCell {
+                instructorsCell.collectionViewInstructors.reloadData()
+            }
+        }
     }
+    
+    func getSections() {
+        ApiManager.shared.getSections(IDs: course!.sectionsIDs) { sections in
+            self.course?.sections = sections
+            self.syllabusTableView.reloadData()
+        }
+    }
+    
 }
 
 // MARK: - UITableViewDataSource
@@ -77,45 +95,66 @@ extension CourseViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableViewCourseInfo.dequeueReusableCell(withIdentifier: "CourseInfoCell") as! CourseInfoCell
         cell.scrollView.delegate = self
         
-        cell.scrollView.bounds.size.height -= (videoView.bounds.size.height + headerHeight + self.navigationController!.navigationBar.bounds.height + UIApplication.shared.statusBarFrame.height)
-        
+        cell.scrollView.bounds.size.height -= (headerHeight + self.navigationController!.navigationBar.bounds.height + UIApplication.shared.statusBarFrame.height)
         cell.scrollView.contentSize = CGSize(width: self.view.bounds.width * 3, height: cell.scrollView.bounds.size.height)
         
-//        let overviewTableView = UITableView(frame: CGRect(x: cell.scrollView.bounds.origin.x, y: cell.scrollView.bounds.origin.y, width: cell.scrollView.bounds.width, height: cell.scrollView.bounds.height))
-        overviewTableView.frame = CGRect(x: cell.scrollView.bounds.origin.x, y: cell.scrollView.bounds.origin.y, width: cell.scrollView.bounds.width, height: cell.scrollView.bounds.height)
-        overviewTableView.tableFooterView = UIView()
         overviewTableViewDataSource = CourseOverviewTableViewDataSource(tableView: overviewTableView, course: course!)
-        overviewTableView.dataSource = overviewTableViewDataSource
-        overviewTableView.allowsSelection = false
-       
-        overviewTableView.estimatedRowHeight = 100
-        overviewTableView.rowHeight = UITableViewAutomaticDimension
+        overviewTableViewDelegate = CourseInfoTableViewDelegate(tableView: overviewTableView)
         
-        let detailedTableView = UITableView(frame: CGRect(x: cell.scrollView.bounds.width, y: cell.scrollView.bounds.origin.y, width: cell.scrollView.bounds.width, height: cell.scrollView.bounds.height))
-        detailedTableView.tableFooterView = UIView()
+        initCourseInfoTableView(overviewTableView, cell: cell, dataSource: overviewTableViewDataSource!, delegate: overviewTableViewDelegate!)
+        
         detailedTableViewDataSource = CourseDetailedTableViewDataSource(tableView: detailedTableView, course: course!)
-        detailedTableView.dataSource = detailedTableViewDataSource
-        detailedTableView.reloadData()
-        detailedTableView.allowsSelection = false
+        detailedTableViewDelegate = CourseInfoTableViewDelegate(tableView: detailedTableView)
+
+        initCourseInfoTableView(detailedTableView, cell: cell, dataSource: detailedTableViewDataSource!, delegate: detailedTableViewDelegate!)
         
-        detailedTableView.estimatedRowHeight = 100
-        detailedTableView.rowHeight = UITableViewAutomaticDimension
+        syllabusTableViewDataSource = CourseSyllabusTableViewDataSource(tableView: syllabusTableView, course: course!)
+        syllabusTableViewDelegate = CourseInfoTableViewDelegate(tableView: syllabusTableView)
+        
+        initCourseInfoTableView(syllabusTableView, cell: cell, dataSource: syllabusTableViewDataSource!, delegate: syllabusTableViewDelegate!)
         
         cell.scrollView.addSubview(overviewTableView)
         cell.scrollView.addSubview(detailedTableView)
+        cell.scrollView.addSubview(syllabusTableView)
         
         return cell
     }
 
+    func initCourseInfoTableView(_ tableView: UITableView, cell: CourseInfoCell, dataSource: UITableViewDataSource, delegate: UITableViewDelegate) {
+        
+        let bounds = cell.scrollView.bounds
+        
+        if let index = courseInfoTableViews.index(of: tableView) {
+            tableView.frame = CGRect(x: bounds.width * CGFloat(index),
+                                     y: bounds.origin.y,
+                                     width: bounds.width,
+                                     height: bounds.height)
+        }
+        
+        tableView.tableFooterView = UIView()
+        
+        tableView.dataSource = dataSource
+        tableView.delegate = delegate
+        
+        tableView.allowsSelection = false
+        tableView.isUserInteractionEnabled = false
+        
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
 }
 
 // MARK: - UITableViewDelegate
 extension CourseViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.view.bounds.size.height - videoView.bounds.size.height - headerHeight - self.navigationController!.navigationBar.bounds.height - UIApplication.shared.statusBarFrame.height
+//        return self.view.bounds.size.height - videoView.bounds.size.height - headerHeight - self.navigationController!.navigationBar.bounds.height - UIApplication.shared.statusBarFrame.height
+        return self.view.bounds.size.height - headerHeight - self.navigationController!.navigationBar.bounds.height - UIApplication.shared.statusBarFrame.height
+
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -138,33 +177,40 @@ extension CourseViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        if let header = tableViewHeader {
-            header.sectionIndicator.frame = CGRect(x: (header.bounds.origin.x + scrollView.contentOffset.x) / 3,
-                                                   y: header.bounds.size.height - header.sectionIndicator.bounds.size.height,
-                                                   width: header.sectionIndicator.bounds.size.width,
-                                                   height: header.sectionIndicator.bounds.size.height)
-        }
-        
-        let pageWidth = scrollView.bounds.width
-        let page = Int(scrollView.contentOffset.x / pageWidth + 1 / 2)
-        
-        if currentPage != page {
+        if scrollView.contentOffset.x > 0 {
             
             if let header = tableViewHeader {
-                UIView.animate(withDuration: 0.3, animations: {
-                    header.sectionIndicator.frame = CGRect(x: CGFloat(page) * header.bounds.size.width / 3,
-                                                           y: header.bounds.size.height - header.sectionIndicator.bounds.size.height,
-                                                           width: header.sectionIndicator.bounds.size.width,
-                                                           height: header.sectionIndicator.bounds.size.height)
-                    
-                })
-                
-                tabs?[currentPage].setTitleColor(.darkGray, for: .normal)
-                tabs?[page].setTitleColor(UIColor.stepikBlueColor, for: .normal)
+                header.indicatorLeadingConstraint.constant = (header.bounds.origin.x + scrollView.contentOffset.x) / 3
             }
-            currentPage = page
+            
+            let pageWidth = scrollView.bounds.width
+            let page = Int(scrollView.contentOffset.x / pageWidth + 1 / 2)
+            
+            if currentPage != page {
+                
+                if let header = tableViewHeader {
+                    header.indicatorLeadingConstraint.constant = CGFloat(page) * header.bounds.size.width / 3
+                    
+                    tabs?[currentPage].setTitleColor(.darkGray, for: .normal)
+                    tabs?[page].setTitleColor(UIColor.stepikBlueColor, for: .normal)
+                }
+                currentPage = page
+            }
         }
-        
+        if scrollView.contentOffset.y > headerHeight + self.navigationController!.navigationBar.bounds.height {
+            
+            for tableView in courseInfoTableViews {
+                tableView.isUserInteractionEnabled = true
+            }
+            
+        } else {
+            for tableView in courseInfoTableViews {
+                tableView.isUserInteractionEnabled = false
+                UIView.animate(withDuration: 0.3, animations: {
+                    tableView.contentOffset = CGPoint(x: tableView.contentOffset.x, y: 0)
+                })
+            }
+        }
     }
 
 }

@@ -55,7 +55,10 @@ class ApiManager {
                         course.coverUrl = courseJSON["cover"].stringValue
                         
                         let instructorsIDs = courseJSON["instructors"]
-                        course.instructorsIDs = instructorsIDs.map { $0.1.stringValue }
+                        course.instructorsIDs = instructorsIDs.map { $0.1.intValue }
+                        
+                        let sectionsIDs = courseJSON["sections"]
+                        course.sectionsIDs = sectionsIDs.map { $0.1.intValue }
                         
                         let description = courseJSON["description"].stringValue.decodedFromHtml()
                         course.description = self.valueOrNil(description)
@@ -108,11 +111,6 @@ class ApiManager {
     
     func getCourseCover(coverUrl: String, cell: CourseCell) {
         getImage(url: host + coverUrl, putInto: cell.imageViewCover)
-//        
-//        if let url = URL(string: host + coverUrl) {
-//            cell.imageViewCover.image = UIImage(named: "stepik_grey")
-//            Nuke.loadImage(with: url, into: cell.imageViewCover)
-//        }
     }
     
     func getCourseVideoThumbnail(url: String, imageView: UIImageView) {
@@ -122,7 +120,7 @@ class ApiManager {
         }
     }
     
-    func getInstructors(IDs: [String], completion: @escaping (_ instructors: [User]) -> Void) {
+    func getInstructors(IDs: [Int], completion: @escaping (_ instructors: [User]) -> Void) {
         var instructors: [User] = []
         let downloadGroup = DispatchGroup()
         for id in IDs {
@@ -130,22 +128,18 @@ class ApiManager {
             getInstructor(id: id) { instructor in
                 instructors.append(instructor)
                 downloadGroup.leave()
-                //if instructors.count == IDs.count {
-                //    completion(instructors)
-                //}
             }
         }
         
-        downloadGroup.notify(queue: DispatchQueue.main) { // 2
+        downloadGroup.notify(queue: DispatchQueue.main) {
             completion(instructors)
         }
     }
     
-    func getInstructor(id: String, completion: @escaping (_ instructor: User) -> Void) {
+    func getInstructor(id: Int, completion: @escaping (_ instructor: User) -> Void) {
         
-        Alamofire.request(host + "/api/users/" + id).responseJSON { response in
+        Alamofire.request(host + "/api/users/\(id)").responseJSON { response in
             if let value = response.result.value {
-                print(value)
                 let json = JSON(value)
                 if let userJSON = json["users"].first?.1 {
                     let firstName = userJSON["first_name"].stringValue
@@ -159,6 +153,38 @@ class ApiManager {
                     }
                     
                     completion(instructor)
+                }
+            }
+        }
+    }
+    
+    func getSections(IDs: [Int], completion: @escaping (_ sections: [Section]) -> Void) {
+        var sections: [Section] = []
+        let downloadGroup = DispatchGroup()
+        for id in IDs {
+            downloadGroup.enter()
+            getSection(id: id) { section in
+                sections.append(section)
+                downloadGroup.leave()
+            }
+        }
+        
+        downloadGroup.notify(queue: DispatchQueue.main) {
+            completion(sections)
+        }
+    }
+    
+    func getSection(id: Int, completion: @escaping (_ section: Section) -> Void) {
+        
+        Alamofire.request(host + "/api/sections/\(id)").responseJSON { response in
+            if let value = response.result.value {
+                print(value)
+                let json = JSON(value)
+                if let sectionJSON = json["sections"].first?.1 {
+                    let position = sectionJSON["position"].intValue
+                    let title = sectionJSON["title"].stringValue
+                    let section = Section(index: position, title: title)
+                    completion(section)
                 }
             }
         }

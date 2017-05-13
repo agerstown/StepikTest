@@ -8,20 +8,20 @@
 
 import UIKit
 
-protocol CourseHeaderDelegate {
+protocol CourseHeaderDelegate: class {
     func tabSelected(tab: Int)
 }
 
 class CourseTableViewSectionHeader: UITableViewHeaderFooterView {
     
     @IBOutlet weak var courseTitle: UILabel!
-    @IBOutlet weak var sectionIndicator: UIView!
+    @IBOutlet weak var indicatorLeadingConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var buttonOverview: UIButton!
     @IBOutlet weak var buttonDetailed: UIButton!
     @IBOutlet weak var buttonSyllabus: UIButton!
     
-    var courseHeaderDelegate: CourseHeaderDelegate?
+    weak var courseHeaderDelegate: CourseHeaderDelegate?
     
     // MARK: - Actions
     @IBAction func buttonOverviewTapped(_ sender: UIButton) {
