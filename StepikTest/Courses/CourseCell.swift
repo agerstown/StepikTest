@@ -15,4 +15,9 @@ class CourseCell: UITableViewCell {
     @IBOutlet weak var labelSummary: UILabel!
     @IBOutlet weak var labelDate: UILabel!
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        labelDate.adjustsFontSizeToFitWidth = true
+    }
+    
 }
