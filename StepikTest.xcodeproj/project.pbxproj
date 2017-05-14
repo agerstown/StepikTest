@@ -24,6 +24,8 @@
 		615250D61EC11DAD0034F492 /* CourseTableViewSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615250D51EC11DAD0034F492 /* CourseTableViewSectionHeader.swift */; };
 		615250DA1EC124610034F492 /* CourseOverviewTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615250D91EC124610034F492 /* CourseOverviewTableViewDataSource.swift */; };
 		615250DE1EC1273D0034F492 /* DefaultCourseInfoItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615250DD1EC1273D0034F492 /* DefaultCourseInfoItemCell.swift */; };
+		6157A5A01EC8AFD7000AAD37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6157A59F1EC8AFD7000AAD37 /* LaunchScreen.storyboard */; };
+		6157A5A21EC8AFE4000AAD37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6157A5A11EC8AFE4000AAD37 /* Main.storyboard */; };
 		6185EC951EC26CDA00197FB1 /* InstructorsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6185EC941EC26CDA00197FB1 /* InstructorsCell.swift */; };
 		6185EC991EC271DE00197FB1 /* InstructorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6185EC981EC271DE00197FB1 /* InstructorCell.swift */; };
 		6185EC9B1EC284D500197FB1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6185EC9A1EC284D500197FB1 /* User.swift */; };
@@ -34,8 +36,6 @@
 		6185ECA61EC28CBC00197FB1 /* InstructorsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6185ECA51EC28CBC00197FB1 /* InstructorsCell.xib */; };
 		618D85AD1EC790AB008936E0 /* SectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 618D85AC1EC790AB008936E0 /* SectionCell.xib */; };
 		618D85AF1EC7910C008936E0 /* SectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618D85AE1EC7910C008936E0 /* SectionCell.swift */; };
-		618D85B21EC79D53008936E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 618D85B01EC79D53008936E0 /* Main.storyboard */; };
-		618D85B51EC79D5F008936E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 618D85B31EC79D5F008936E0 /* LaunchScreen.storyboard */; };
 		618D85B71EC7A9F1008936E0 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618D85B61EC7A9F1008936E0 /* UITableView+Extensions.swift */; };
 		61C43A0D1EB7A1BB00DED919 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C43A0C1EB7A1BB00DED919 /* AppDelegate.swift */; };
 		61C43A221EB7A1BB00DED919 /* StepikTestAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C43A211EB7A1BB00DED919 /* StepikTestAPITests.swift */; };
@@ -81,6 +81,8 @@
 		615250D51EC11DAD0034F492 /* CourseTableViewSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CourseTableViewSectionHeader.swift; path = StepikTest/Course/CourseTableViewSectionHeader.swift; sourceTree = SOURCE_ROOT; };
 		615250D91EC124610034F492 /* CourseOverviewTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CourseOverviewTableViewDataSource.swift; path = StepikTest/Course/Overview/CourseOverviewTableViewDataSource.swift; sourceTree = SOURCE_ROOT; };
 		615250DD1EC1273D0034F492 /* DefaultCourseInfoItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefaultCourseInfoItemCell.swift; path = StepikTest/Course/DefaultCourseInfoItemCell.swift; sourceTree = SOURCE_ROOT; };
+		6157A59F1EC8AFD7000AAD37 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6157A5A11EC8AFE4000AAD37 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		6185EC941EC26CDA00197FB1 /* InstructorsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructorsCell.swift; sourceTree = "<group>"; };
 		6185EC981EC271DE00197FB1 /* InstructorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructorCell.swift; sourceTree = "<group>"; };
 		6185EC9A1EC284D500197FB1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -91,8 +93,6 @@
 		6185ECA51EC28CBC00197FB1 /* InstructorsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstructorsCell.xib; sourceTree = "<group>"; };
 		618D85AC1EC790AB008936E0 /* SectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionCell.xib; sourceTree = "<group>"; };
 		618D85AE1EC7910C008936E0 /* SectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionCell.swift; sourceTree = "<group>"; };
-		618D85B11EC79D53008936E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		618D85B41EC79D5F008936E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		618D85B61EC7A9F1008936E0 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		61C43A091EB7A1BB00DED919 /* StepikTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StepikTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61C43A0C1EB7A1BB00DED919 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -169,8 +169,8 @@
 		6144CED71EB7AFDF00C0E105 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				618D85B31EC79D5F008936E0 /* LaunchScreen.storyboard */,
-				618D85B01EC79D53008936E0 /* Main.storyboard */,
+				6157A59F1EC8AFD7000AAD37 /* LaunchScreen.storyboard */,
+				6157A5A11EC8AFE4000AAD37 /* Main.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -413,13 +413,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				618D85B51EC79D5F008936E0 /* LaunchScreen.storyboard in Resources */,
 				6185ECA41EC28CB000197FB1 /* InstructorCell.xib in Resources */,
 				6185EC9E1EC28C7A00197FB1 /* CourseInfoCell.xib in Resources */,
+				6157A5A01EC8AFD7000AAD37 /* LaunchScreen.storyboard in Resources */,
 				6185ECA61EC28CBC00197FB1 /* InstructorsCell.xib in Resources */,
 				6185ECA21EC28CA100197FB1 /* CourseTableViewSectionHeader.xib in Resources */,
 				614A2A901EC3C714002DF5F1 /* Assets.xcassets in Resources */,
-				618D85B21EC79D53008936E0 /* Main.storyboard in Resources */,
+				6157A5A21EC8AFE4000AAD37 /* Main.storyboard in Resources */,
 				6185ECA01EC28C9500197FB1 /* DefaultCourseInfoItemCell.xib in Resources */,
 				618D85AD1EC790AB008936E0 /* SectionCell.xib in Resources */,
 			);
@@ -594,25 +594,6 @@
 			targetProxy = 61C43A291EB7A1BB00DED919 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		618D85B01EC79D53008936E0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				618D85B11EC79D53008936E0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		618D85B31EC79D5F008936E0 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				618D85B41EC79D5F008936E0 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		61C43A2F1EB7A1BB00DED919 /* Debug */ = {

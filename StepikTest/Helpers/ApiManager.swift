@@ -177,7 +177,6 @@ class ApiManager {
         
         Alamofire.request(host + "/api/sections/\(id)").responseJSON { response in
             if let value = response.result.value {
-                print(value)
                 let json = JSON(value)
                 if let sectionJSON = json["sections"].first?.1 {
                     let position = sectionJSON["position"].intValue
