@@ -109,10 +109,7 @@ class CourseViewController: UIViewController {
                 let player = AVPlayer(playerItem: playerItem)
                 
                 playerViewController.player = player
-                playerViewController.view.frame = CGRect(x: videoView.bounds.origin.x,
-                                                         y: videoView.bounds.origin.y,
-                                                         width: videoView.bounds.size.width,
-                                                         height: videoView.bounds.size.height)
+                playerViewController.view.frame = videoView.frame
                 playerViewController.view.isHidden = true
                 videoView.addSubview(playerViewController.view)
             }
