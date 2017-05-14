@@ -57,13 +57,14 @@ class CourseOverviewTableViewDataSource: NSObject, UITableViewDataSource {
         if let flowLayout = cell.collectionViewInstructors.collectionViewLayout as? UICollectionViewFlowLayout {
             
             let numberOfCells = CGFloat(course.instructorsIDs.count)
-            let collectionViewWidth = cell.collectionViewInstructors.bounds.size.width
+            let collectionViewWidth = tableView.bounds.size.width - 32
             let cellWidth = flowLayout.itemSize.width
             let spacing = flowLayout.minimumLineSpacing
             
             var edgeInsets: CGFloat = 0
-            if numberOfCells < 4 {
-                edgeInsets = (collectionViewWidth - numberOfCells * cellWidth - (numberOfCells - 1) * spacing) / (numberOfCells > 1 ? numberOfCells : 2)
+            let cellsPlusSpacingWidth = numberOfCells * cellWidth + (numberOfCells - 1) * spacing
+            if cell.collectionViewInstructors.bounds.size.width > cellsPlusSpacingWidth {
+                edgeInsets = (collectionViewWidth - cellsPlusSpacingWidth) / (numberOfCells > 1 ? numberOfCells : 2)
             }
             
             flowLayout.sectionInset = UIEdgeInsetsMake(0, edgeInsets, 0, edgeInsets)

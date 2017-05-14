@@ -1,21 +1,24 @@
 PODS:
   - Alamofire (4.1.0)
   - CWStatusBarNotification (2.3.5)
+  - Nimble (5.1.1)
   - Nuke (4.1.2)
   - SwiftyJSON (3.1.3)
 
 DEPENDENCIES:
   - Alamofire
   - CWStatusBarNotification
+  - Nimble
   - Nuke
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: e266cf991b933498df791e645e0d8ac294492153
   CWStatusBarNotification: 3d2738b25c3207f60cc50201388d3c96182545ff
+  Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
   Nuke: 7cfd2acdf90c36f66e6ea40795bac0d851a9afe0
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
 
-PODFILE CHECKSUM: d8901aa1e96ba76751e1224fc3369f1f6869242d
+PODFILE CHECKSUM: 31136a3b7546bc4b70071a773375134b9f7927d3
 
 COCOAPODS: 1.2.0.beta.1

@@ -111,15 +111,12 @@ class ApiManager {
         }
     }
     
-    func getCourseCover(coverUrl: String, cell: CourseCell) {
-        getImage(url: host + coverUrl, putInto: cell.imageViewCover)
+    func getCourseCover(url: String, imageView: UIImageView) {
+        getImage(url: host + url, putInto: imageView)
     }
     
     func getCourseVideoThumbnail(url: String, imageView: UIImageView) {
-        if let url = URL(string: url) {
-            imageView.image = UIImage(named: "stepik_grey")
-            Nuke.loadImage(with: url, into: imageView)
-        }
+        getImage(url: url, putInto: imageView)
     }
     
     func getInstructors(IDs: [Int], completion: @escaping (_ instructors: [User]) -> Void) {

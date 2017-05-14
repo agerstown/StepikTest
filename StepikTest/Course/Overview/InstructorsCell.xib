@@ -12,17 +12,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" restorationIdentifier="InstructorsCell" id="iN0-l3-epB" customClass="InstructorsCell" customModule="StepikTest" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="192"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxs-ab-aXd">
-                    <rect key="frame" x="16" y="16" width="83" height="20.5"/>
+                    <rect key="frame" x="16" y="16" width="83" height="495.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Sqc-rI-V5v">
-                    <rect key="frame" x="16" y="44.5" width="343" height="132"/>
+                    <rect key="frame" x="16" y="519.5" width="343" height="132"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="132" id="xJD-Ab-Erd"/>
@@ -44,7 +44,6 @@
                 <constraint firstItem="hxs-ab-aXd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="gGo-2G-KYp"/>
                 <constraint firstAttribute="trailing" secondItem="Sqc-rI-V5v" secondAttribute="trailing" constant="16" id="gNZ-2y-d7f"/>
             </constraints>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="collectionViewInstructors" destination="Sqc-rI-V5v" id="FMt-Ea-gbu"/>
                 <outlet property="labelInstructors" destination="hxs-ab-aXd" id="LYR-SB-7A1"/>

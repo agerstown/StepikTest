@@ -16,7 +16,6 @@ class CourseViewController: UIViewController {
     
     @IBOutlet weak var videoView: UIView!
     @IBOutlet weak var imageViewVideoThumbnail: UIImageView!
-    @IBOutlet weak var webViewVideo: UIWebView!
     @IBOutlet weak var buttonPlayVideo: UIButton!
     
     var course: Course?
@@ -68,6 +67,11 @@ class CourseViewController: UIViewController {
         playerViewController.player?.pause()
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        tableViewCourseInfo.reloadData()
+    }
+
     // MARK: - Getting data from server
     func getVideoThumbnail() {
         if let introVideoThumbnailLink = course?.introVideoThumbnailLink {
@@ -135,23 +139,27 @@ extension CourseViewController: UITableViewDataSource {
         let cell = tableViewCourseInfo.dequeue(CourseInfoCell.self)
         cell.scrollView.delegate = self
         
-        cell.scrollView.bounds.size.height -= (headerHeight + navBarHeight + UIApplication.shared.statusBarFrame.height)
-        cell.scrollView.contentSize = CGSize(width: self.view.bounds.width * 3, height: cell.scrollView.bounds.size.height)
+        cell.scrollView.frame = CGRect(x: cell.scrollView.bounds.origin.x,
+                                       y: cell.scrollView.bounds.origin.y,
+                                       width: self.view.bounds.size.width,
+                                       height: self.view.bounds.size.height - (headerHeight + navBarHeight + UIApplication.shared.statusBarFrame.height))
+        
+        cell.scrollView.contentSize = CGSize(width: cell.scrollView.bounds.size.width * 3, height: cell.scrollView.bounds.size.height)
+        
+        if course?.introVideoThumbnailLink != nil {
+            overviewTableViewDelegate = CourseInfoTableViewDelegate(tableView: overviewTableView)
+            detailedTableViewDelegate = CourseInfoTableViewDelegate(tableView: detailedTableView)
+            syllabusTableViewDelegate = CourseInfoTableViewDelegate(tableView: syllabusTableView)
+        }
         
         overviewTableViewDataSource = CourseOverviewTableViewDataSource(tableView: overviewTableView, course: course!)
-        overviewTableViewDelegate = CourseInfoTableViewDelegate(tableView: overviewTableView)
-        
-        initCourseInfoTableView(overviewTableView, cell: cell, dataSource: overviewTableViewDataSource!, delegate: overviewTableViewDelegate!)
+        initCourseInfoTableView(overviewTableView, cell: cell, dataSource: overviewTableViewDataSource!, delegate: overviewTableViewDelegate)
         
         detailedTableViewDataSource = CourseDetailedTableViewDataSource(tableView: detailedTableView, course: course!)
-        detailedTableViewDelegate = CourseInfoTableViewDelegate(tableView: detailedTableView)
-
-        initCourseInfoTableView(detailedTableView, cell: cell, dataSource: detailedTableViewDataSource!, delegate: detailedTableViewDelegate!)
+        initCourseInfoTableView(detailedTableView, cell: cell, dataSource: detailedTableViewDataSource!, delegate: detailedTableViewDelegate)
         
         syllabusTableViewDataSource = CourseSyllabusTableViewDataSource(tableView: syllabusTableView, course: course!)
-        syllabusTableViewDelegate = CourseInfoTableViewDelegate(tableView: syllabusTableView)
-        
-        initCourseInfoTableView(syllabusTableView, cell: cell, dataSource: syllabusTableViewDataSource!, delegate: syllabusTableViewDelegate!)
+        initCourseInfoTableView(syllabusTableView, cell: cell, dataSource: syllabusTableViewDataSource!, delegate: syllabusTableViewDelegate)
         
         cell.scrollView.addSubview(overviewTableView)
         cell.scrollView.addSubview(detailedTableView)
@@ -160,7 +168,7 @@ extension CourseViewController: UITableViewDataSource {
         return cell
     }
 
-    func initCourseInfoTableView(_ tableView: UITableView, cell: CourseInfoCell, dataSource: UITableViewDataSource, delegate: UITableViewDelegate) {
+    func initCourseInfoTableView(_ tableView: UITableView, cell: CourseInfoCell, dataSource: UITableViewDataSource, delegate: UITableViewDelegate?) {
         
         let bounds = cell.scrollView.bounds
         
@@ -174,7 +182,9 @@ extension CourseViewController: UITableViewDataSource {
         tableView.tableFooterView = UIView()
         
         tableView.dataSource = dataSource
-        tableView.delegate = delegate
+        if let delegate = delegate {
+            tableView.delegate = delegate
+        }
         
         tableView.allowsSelection = false
         tableView.isUserInteractionEnabled = false
@@ -232,18 +242,17 @@ extension CourseViewController: UIScrollViewDelegate {
                 currentPage = page
             }
         }
-        if scrollView.contentOffset.y > headerHeight + navBarHeight {
-            
+        
+        if scrollView.contentOffset.y < headerHeight + navBarHeight || course?.introVideoThumbnailLink == nil {
             for tableView in courseInfoTableViews {
-                tableView.isUserInteractionEnabled = true
-            }
-            
-        } else {
-            for tableView in courseInfoTableViews {
-                tableView.isUserInteractionEnabled = false
+                tableView.isUserInteractionEnabled = course?.introVideoThumbnailLink == nil ? true : false
                 UIView.animate(withDuration: 0.3, animations: {
                     tableView.contentOffset = CGPoint(x: tableView.contentOffset.x, y: 0)
                 })
+            }
+        } else {
+            for tableView in courseInfoTableViews {
+                tableView.isUserInteractionEnabled = true
             }
         }
     }

@@ -3,6 +3,17 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "CourseViewController.initCourseInfoTableView(UITableView, cell : CourseInfoCell, dataSource : UITableViewDataSource, delegate : UITableViewDelegate) -&gt; ():CourseViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "course?.introVideoThumbnailLink">
+            </PersistentString>
+            <PersistentString
+               value = "tableView.isUserInteractionEnabled">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "CourseOverviewTableViewDataSource.init(course : Course) -&gt; CourseOverviewTableViewDataSource:CourseOverviewTableViewDataSource.swift">
          <PersistentStrings>
             <PersistentString
@@ -63,12 +74,15 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "CourseViewController.tableView(UITableView, cellForRowAt : IndexPath) -&gt; UITableViewCell:CourseViewController.swift">
+         contextName = "CourseViewController.buttonPlayVideoTapped(Any) -&gt; ():CourseViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "scrollViewHeight">
+               value = "player">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CourseViewController.(getSections() -&gt; ()).(closure #1):CourseViewController.swift">
       </ContextState>
       <ContextState
          contextName = "CoursesViewController.scrollViewDidEndDecelerating(UIScrollView) -&gt; ():CoursesViewController.swift">
@@ -79,27 +93,24 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "CourseViewController.(getSections() -&gt; ()).(closure #1):CourseViewController.swift">
-      </ContextState>
-      <ContextState
          contextName = "CourseViewController.tableView(UITableView, heightForRowAt : IndexPath) -&gt; CGFloat:CourseViewController.swift">
          <PersistentStrings>
-            <PersistentString
-               value = "self.navigationController!.navigationBar.frame.height">
-            </PersistentString>
             <PersistentString
                value = "self.view.frame.size.height ">
             </PersistentString>
             <PersistentString
                value = "videoView.frame.size.height">
             </PersistentString>
+            <PersistentString
+               value = "self.navigationController!.navigationBar.frame.height">
+            </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "CourseViewController.buttonPlayVideoTapped(Any) -&gt; ():CourseViewController.swift">
+         contextName = "CourseViewController.tableView(UITableView, cellForRowAt : IndexPath) -&gt; UITableViewCell:CourseViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "player">
+               value = "scrollViewHeight">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -146,10 +157,10 @@
                value = "cell.imageViewPhoto.frame.height">
             </PersistentString>
             <PersistentString
-               value = "cell.labelName">
+               value = "collectionView.dequeueReusableCell(withReuseIdentifier: &quot;InstructorCell&quot;, for: indexPath)">
             </PersistentString>
             <PersistentString
-               value = "collectionView.dequeueReusableCell(withReuseIdentifier: &quot;InstructorCell&quot;, for: indexPath)">
+               value = "cell.labelName">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -179,16 +190,19 @@
                value = "header.indicatorLeadingConstraint.constant">
             </PersistentString>
             <PersistentString
+               value = "scrollView.contentOffset.y">
+            </PersistentString>
+            <PersistentString
                value = "scroll.contentOffset">
             </PersistentString>
             <PersistentString
-               value = "scrollView.contentOffset.x">
+               value = "tableView.isUserInteractionEnabled">
             </PersistentString>
             <PersistentString
                value = "(header.bounds.origin.x + scrollView.contentOffset.x) / 3">
             </PersistentString>
             <PersistentString
-               value = "tableView.contentOffset">
+               value = "course?.introVideoThumbnailLink">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

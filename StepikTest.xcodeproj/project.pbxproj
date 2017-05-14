@@ -38,8 +38,9 @@
 		618D85B51EC79D5F008936E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 618D85B31EC79D5F008936E0 /* LaunchScreen.storyboard */; };
 		618D85B71EC7A9F1008936E0 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618D85B61EC7A9F1008936E0 /* UITableView+Extensions.swift */; };
 		61C43A0D1EB7A1BB00DED919 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C43A0C1EB7A1BB00DED919 /* AppDelegate.swift */; };
-		61C43A221EB7A1BB00DED919 /* StepikTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C43A211EB7A1BB00DED919 /* StepikTestTests.swift */; };
+		61C43A221EB7A1BB00DED919 /* StepikTestAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C43A211EB7A1BB00DED919 /* StepikTestAPITests.swift */; };
 		61DBB6111EBA8953006BCCE1 /* StatusBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DBB6101EBA8953006BCCE1 /* StatusBarManager.swift */; };
+		73100CCBAE7709125C44C098 /* Pods_StepikTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D5F07A8ECD8923056895CBD /* Pods_StepikTestTests.framework */; };
 		92582A5A87000CDA75302994 /* Pods_StepikTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA15E2B9139F60697CD39ED8 /* Pods_StepikTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -97,11 +98,14 @@
 		61C43A0C1EB7A1BB00DED919 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61C43A181EB7A1BB00DED919 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61C43A1D1EB7A1BB00DED919 /* StepikTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StepikTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		61C43A211EB7A1BB00DED919 /* StepikTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepikTestTests.swift; sourceTree = "<group>"; };
+		61C43A211EB7A1BB00DED919 /* StepikTestAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepikTestAPITests.swift; sourceTree = "<group>"; };
 		61C43A231EB7A1BB00DED919 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61C43A281EB7A1BB00DED919 /* StepikTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StepikTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		61DBB6101EBA8953006BCCE1 /* StatusBarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarManager.swift; sourceTree = "<group>"; };
+		7D5F07A8ECD8923056895CBD /* Pods_StepikTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StepikTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		941A1B308C5AEF352858A4C2 /* Pods-StepikTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StepikTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-StepikTest/Pods-StepikTest.release.xcconfig"; sourceTree = "<group>"; };
+		B66DB59015D8F6285B0EF175 /* Pods-StepikTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StepikTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StepikTestTests/Pods-StepikTestTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D400C75626501AAC62D0337B /* Pods-StepikTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StepikTestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StepikTestTests/Pods-StepikTestTests.release.xcconfig"; sourceTree = "<group>"; };
 		FA15E2B9139F60697CD39ED8 /* Pods_StepikTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StepikTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -118,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73100CCBAE7709125C44C098 /* Pods_StepikTestTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,7 +272,7 @@
 		61C43A201EB7A1BB00DED919 /* StepikTestTests */ = {
 			isa = PBXGroup;
 			children = (
-				61C43A211EB7A1BB00DED919 /* StepikTestTests.swift */,
+				61C43A211EB7A1BB00DED919 /* StepikTestAPITests.swift */,
 				61C43A231EB7A1BB00DED919 /* Info.plist */,
 			);
 			path = StepikTestTests;
@@ -278,6 +283,7 @@
 			children = (
 				6144CEDD1EB7CECE00C0E105 /* UIKit.framework */,
 				FA15E2B9139F60697CD39ED8 /* Pods_StepikTest.framework */,
+				7D5F07A8ECD8923056895CBD /* Pods_StepikTestTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -287,6 +293,8 @@
 			children = (
 				3E3101698F26DF03BB399474 /* Pods-StepikTest.debug.xcconfig */,
 				941A1B308C5AEF352858A4C2 /* Pods-StepikTest.release.xcconfig */,
+				B66DB59015D8F6285B0EF175 /* Pods-StepikTestTests.debug.xcconfig */,
+				D400C75626501AAC62D0337B /* Pods-StepikTestTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -318,9 +326,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 61C43A341EB7A1BB00DED919 /* Build configuration list for PBXNativeTarget "StepikTestTests" */;
 			buildPhases = (
+				FE4E30A9556920AF6717A534 /* [CP] Check Pods Manifest.lock */,
 				61C43A191EB7A1BB00DED919 /* Sources */,
 				61C43A1A1EB7A1BB00DED919 /* Frameworks */,
 				61C43A1B1EB7A1BB00DED919 /* Resources */,
+				3F62145F94487A93AC5E433B /* [CP] Embed Pods Frameworks */,
+				D4F5BED628BA2B35DEC5DBB0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -461,6 +472,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StepikTest/Pods-StepikTest-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3F62145F94487A93AC5E433B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StepikTestTests/Pods-StepikTestTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4F5BED628BA2B35DEC5DBB0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StepikTestTests/Pods-StepikTestTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E1A613E053C976C01D077BCC /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -474,6 +515,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StepikTest/Pods-StepikTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE4E30A9556920AF6717A534 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -513,7 +569,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61C43A221EB7A1BB00DED919 /* StepikTestTests.swift in Sources */,
+				61C43A221EB7A1BB00DED919 /* StepikTestAPITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -684,6 +740,7 @@
 		};
 		61C43A351EB7A1BB00DED919 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B66DB59015D8F6285B0EF175 /* Pods-StepikTestTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -698,6 +755,7 @@
 		};
 		61C43A361EB7A1BB00DED919 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D400C75626501AAC62D0337B /* Pods-StepikTestTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

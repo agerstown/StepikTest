@@ -6,5 +6,9 @@ target 'StepikTest' do
     pod 'Alamofire'
     pod 'SwiftyJSON'
     pod 'Nuke'
-    pod ‘CWStatusBarNotification’
+    pod 'CWStatusBarNotification'
+end
+
+target ‘StepikTestTests’ do
+    pod ‘Nimble'
 end

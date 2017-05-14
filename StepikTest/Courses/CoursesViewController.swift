@@ -77,7 +77,7 @@ class CoursesViewController: UIViewController {
     // MARK: - Spinner for initial courses loading
     func startSpinning() {
         tableViewCourses.isHidden = true
-        
+    
         activityIndicatorInitialLoading.center = CGPoint(x: self.view.bounds.width / 2, y: self.view.bounds.height / 2)
         self.view.addSubview(activityIndicatorInitialLoading)
         activityIndicatorInitialLoading.startAnimating()
@@ -112,7 +112,7 @@ extension CoursesViewController: UITableViewDataSource {
         cell.labelDate.text = course.stringDate
         
         if let coverUrl = course.coverUrl {
-            ApiManager.shared.getCourseCover(coverUrl: coverUrl, cell: cell)
+            ApiManager.shared.getCourseCover(url: coverUrl, imageView: cell.imageViewCover)
         } else {
             cell.imageViewCover.image = UIImage(named: "stepik_grey")
         }
