@@ -112,6 +112,8 @@ class CourseViewController: UIViewController {
                 playerViewController.view.frame = videoView.frame
                 playerViewController.view.isHidden = true
                 videoView.addSubview(playerViewController.view)
+                
+                try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, with: [])
             }
         }
     }
